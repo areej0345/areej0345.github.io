@@ -7,322 +7,199 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
-      --bg: #f7f5f2;
-      --surface: #ffffff;
-      --ink: #1a1a1a;
-      --ink-muted: #6b6b6b;
-      --accent: #2563eb;
-      --accent-light: #eff4ff;
-      --border: #e5e2dd;
-      --radius: 14px;
+      --bg: #f7f5f2; --surface: #ffffff; --ink: #1a1a1a; --ink-muted: #6b6b6b;
+      --accent: #2563eb; --accent-light: #eff4ff; --border: #e5e2dd; --radius: 14px;
     }
-
     html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--ink); line-height: 1.6; }
 
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background: var(--bg);
-      color: var(--ink);
-      line-height: 1.6;
-    }
-
-    /* ── NAV ── */
+    /* NAV */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       display: flex; justify-content: space-between; align-items: center;
       padding: 1.1rem 6%;
-      background: rgba(247,245,242,0.85);
-      backdrop-filter: blur(12px);
+      background: rgba(247,245,242,0.9); backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
     }
-    .nav-logo {
-      font-family: 'DM Serif Display', serif;
-      font-size: 1.25rem;
-      color: var(--ink);
-      text-decoration: none;
-    }
-    .nav-links { display: flex; gap: 2rem; list-style: none; }
-    .nav-links a {
-      font-size: 0.9rem; font-weight: 500;
-      color: var(--ink-muted); text-decoration: none;
-      transition: color 0.2s;
-    }
+    .nav-logo { font-family: 'DM Serif Display', serif; font-size: 1.25rem; color: var(--ink); text-decoration: none; }
+    .nav-links { display: flex; gap: 1.6rem; list-style: none; }
+    .nav-links a { font-size: 0.88rem; font-weight: 500; color: var(--ink-muted); text-decoration: none; transition: color 0.2s; }
     .nav-links a:hover { color: var(--accent); }
 
-    /* ── HERO ── */
-    #hero {
-      min-height: 100vh;
-      display: flex; align-items: center;
-      padding: 8rem 6% 5rem;
-      position: relative; overflow: hidden;
-    }
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem; align-items: center;
-      max-width: 1100px; margin: 0 auto; width: 100%;
-    }
-    .hero-tag {
-      display: inline-block;
-      background: var(--accent-light); color: var(--accent);
-      font-size: 0.8rem; font-weight: 600; letter-spacing: 0.06em;
-      text-transform: uppercase; padding: 0.35rem 0.85rem;
-      border-radius: 999px; margin-bottom: 1.2rem;
-    }
-    h1 {
-      font-family: 'DM Serif Display', serif;
-      font-size: clamp(2.6rem, 5vw, 4rem);
-      line-height: 1.15;
-      color: var(--ink);
-      margin-bottom: 1.2rem;
-    }
-    h1 em {
-      font-style: italic;
-      color: var(--accent);
-    }
-    .hero-bio {
-      color: var(--ink-muted);
-      font-size: 1.05rem;
-      max-width: 460px;
-      margin-bottom: 2rem;
-    }
-    .hero-cta {
-      display: flex; gap: 1rem; flex-wrap: wrap;
-    }
-    .btn {
-      display: inline-flex; align-items: center; gap: 0.4rem;
-      padding: 0.75rem 1.6rem;
-      border-radius: 999px;
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.9rem; font-weight: 600;
-      text-decoration: none;
-      transition: all 0.22s;
-      cursor: pointer; border: none;
-    }
+    /* HERO */
+    #hero { min-height: 100vh; display: flex; align-items: center; padding: 8rem 6% 5rem; }
+    .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; max-width: 1100px; margin: 0 auto; width: 100%; }
+    .hero-tag { display: inline-block; background: var(--accent-light); color: var(--accent); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.35rem 0.85rem; border-radius: 999px; margin-bottom: 1.2rem; }
+    h1 { font-family: 'DM Serif Display', serif; font-size: clamp(2.6rem,5vw,4rem); line-height: 1.15; color: var(--ink); margin-bottom: 1.2rem; }
+    h1 em { font-style: italic; color: var(--accent); }
+    .hero-bio { color: var(--ink-muted); font-size: 1.05rem; max-width: 460px; margin-bottom: 2rem; }
+    .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.75rem 1.6rem; border-radius: 999px; font-family: 'DM Sans', sans-serif; font-size: 0.9rem; font-weight: 600; text-decoration: none; transition: all 0.22s; cursor: pointer; border: none; }
     .btn-primary { background: var(--accent); color: #fff; }
     .btn-primary:hover { background: #2554d5; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(37,99,235,0.25); }
     .btn-outline { background: transparent; color: var(--ink); border: 1.5px solid var(--border); }
     .btn-outline:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+    .btn-white { background: #fff; color: var(--ink); }
+    .btn-white:hover { background: #f3f4f6; transform: translateY(-2px); }
+    .btn-download { background: var(--accent); color: #fff; padding: 0.85rem 2rem; border-radius: 999px; font-size: 0.95rem; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; transition: all 0.22s; }
+    .btn-download:hover { background: #2554d5; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(37,99,235,0.25); }
 
-    /* Hero visual */
-    .hero-visual {
-      display: flex; justify-content: center; align-items: center;
-    }
-    .avatar-wrap {
-      position: relative;
-      width: 320px; height: 320px;
-    }
-    .avatar-circle {
-      width: 100%; height: 100%;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #dbeafe 0%, #e0f2fe 60%, #f0fdf4 100%);
-      display: flex; align-items: center; justify-content: center;
-      font-family: 'DM Serif Display', serif;
-      font-size: 5rem;
-      color: var(--accent);
-      border: 3px solid var(--border);
-      box-shadow: 0 20px 60px rgba(37,99,235,0.1);
-      animation: float 5s ease-in-out infinite;
-    }
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-12px); }
-    }
-    .badge {
-      position: absolute;
-      background: var(--surface);
-      border: 1.5px solid var(--border);
-      border-radius: var(--radius);
-      padding: 0.55rem 1rem;
-      font-size: 0.8rem; font-weight: 600;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.07);
-      white-space: nowrap;
-    }
+    /* Avatar */
+    .hero-visual { display: flex; justify-content: center; align-items: center; }
+    .avatar-wrap { position: relative; width: 320px; height: 320px; }
+    .avatar-circle { width: 100%; height: 100%; border-radius: 50%; background: linear-gradient(135deg,#dbeafe 0%,#e0f2fe 60%,#f0fdf4 100%); display: flex; align-items: center; justify-content: center; font-family: 'DM Serif Display',serif; font-size: 5rem; color: var(--accent); border: 3px solid var(--border); box-shadow: 0 20px 60px rgba(37,99,235,0.1); animation: float 5s ease-in-out infinite; }
+    @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-12px)} }
+    .badge { position: absolute; background: var(--surface); border: 1.5px solid var(--border); border-radius: var(--radius); padding: 0.55rem 1rem; font-size: 0.8rem; font-weight: 600; box-shadow: 0 4px 16px rgba(0,0,0,0.07); white-space: nowrap; }
     .badge-1 { top: 5%; right: -10%; }
     .badge-2 { bottom: 12%; left: -12%; }
-    .badge-3 { top: 42%; right: -18%; }
 
-    /* ── SECTIONS ── */
+    /* SECTIONS */
     section { padding: 6rem 6%; }
     .section-inner { max-width: 1100px; margin: 0 auto; }
-    .section-label {
-      font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em;
-      text-transform: uppercase; color: var(--accent);
-      margin-bottom: 0.5rem;
-    }
-    .section-title {
-      font-family: 'DM Serif Display', serif;
-      font-size: clamp(1.9rem, 3.5vw, 2.6rem);
-      color: var(--ink);
-      margin-bottom: 1rem;
-    }
-    .section-desc {
-      color: var(--ink-muted);
-      max-width: 560px;
-      margin-bottom: 3rem;
-    }
+    .section-label { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem; }
+    .section-title { font-family: 'DM Serif Display',serif; font-size: clamp(1.9rem,3.5vw,2.6rem); color: var(--ink); margin-bottom: 1rem; }
+    .section-desc { color: var(--ink-muted); max-width: 560px; margin-bottom: 3rem; }
 
-    /* ── ABOUT ── */
+    /* ABOUT */
     #about { background: var(--surface); }
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem; align-items: start;
-    }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
     .about-text p { color: var(--ink-muted); margin-bottom: 1rem; line-height: 1.8; }
     .info-list { list-style: none; margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.8rem; }
-    .info-list li {
-      display: flex; gap: 0.8rem; align-items: center;
-      font-size: 0.95rem;
-    }
-    .info-list li span:first-child {
-      font-weight: 600; color: var(--ink); min-width: 100px;
-    }
+    .info-list li { display: flex; gap: 0.8rem; align-items: center; font-size: 0.95rem; }
+    .info-list li span:first-child { font-weight: 600; color: var(--ink); min-width: 100px; }
     .info-list li span:last-child { color: var(--ink-muted); }
-    .stats-grid {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 1.2rem;
-    }
-    .stat-card {
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.5rem;
-      text-align: center;
-    }
-    .stat-card .num {
-      font-family: 'DM Serif Display', serif;
-      font-size: 2.4rem;
-      color: var(--accent);
-      display: block;
-    }
+    .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+    .stat-card { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; text-align: center; }
+    .stat-card .num { font-family: 'DM Serif Display',serif; font-size: 2.4rem; color: var(--accent); display: block; }
     .stat-card .lbl { font-size: 0.85rem; color: var(--ink-muted); margin-top: 0.2rem; }
 
-    /* ── SKILLS ── */
+    /* SKILLS */
     #skills { background: var(--bg); }
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-      gap: 1rem;
-    }
-    .skill-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.4rem 1rem;
-      text-align: center;
-      transition: all 0.22s;
-      cursor: default;
-    }
-    .skill-card:hover {
-      border-color: var(--accent);
-      transform: translateY(-4px);
-      box-shadow: 0 8px 28px rgba(37,99,235,0.1);
-    }
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(140px,1fr)); gap: 1rem; }
+    .skill-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.4rem 1rem; text-align: center; transition: all 0.22s; cursor: default; }
+    .skill-card:hover { border-color: var(--accent); transform: translateY(-4px); box-shadow: 0 8px 28px rgba(37,99,235,0.1); }
     .skill-icon { font-size: 2rem; margin-bottom: 0.6rem; display: block; }
     .skill-name { font-size: 0.9rem; font-weight: 600; color: var(--ink); }
-    .skill-level {
-      font-size: 0.75rem; color: var(--ink-muted);
-      margin-top: 0.25rem;
-    }
+    .skill-level { font-size: 0.75rem; color: var(--ink-muted); margin-top: 0.25rem; }
 
-    /* ── PROJECTS ── */
+    /* PROJECTS */
     #projects { background: var(--surface); }
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 1.5rem;
-    }
-    .project-card {
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.8rem;
-      transition: all 0.22s;
-      display: flex; flex-direction: column; gap: 1rem;
-    }
-    .project-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 36px rgba(0,0,0,0.08);
-      border-color: var(--accent);
-    }
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(320px,1fr)); gap: 1.5rem; }
+    .project-card { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.8rem; transition: all 0.22s; display: flex; flex-direction: column; gap: 1rem; }
+    .project-card:hover { transform: translateY(-5px); box-shadow: 0 12px 36px rgba(0,0,0,0.08); border-color: var(--accent); }
     .project-header { display: flex; justify-content: space-between; align-items: flex-start; }
     .project-icon { font-size: 2.2rem; }
-    .project-link {
-      display: flex; align-items: center; gap: 0.3rem;
-      font-size: 0.82rem; color: var(--accent); font-weight: 600;
-      text-decoration: none;
-      background: var(--accent-light);
-      padding: 0.3rem 0.75rem; border-radius: 999px;
-      transition: background 0.2s;
-    }
+    .project-link { display: flex; align-items: center; gap: 0.3rem; font-size: 0.82rem; color: var(--accent); font-weight: 600; text-decoration: none; background: var(--accent-light); padding: 0.3rem 0.75rem; border-radius: 999px; transition: background 0.2s; }
     .project-link:hover { background: #dbeafe; }
-    .project-name {
-      font-family: 'DM Serif Display', serif;
-      font-size: 1.3rem; color: var(--ink);
-    }
+    .project-name { font-family: 'DM Serif Display',serif; font-size: 1.3rem; color: var(--ink); }
     .project-desc { color: var(--ink-muted); font-size: 0.92rem; line-height: 1.7; }
     .project-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: auto; }
-    .tag {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: 999px; padding: 0.25rem 0.75rem;
-      font-size: 0.75rem; font-weight: 500; color: var(--ink-muted);
-    }
+    .tag { background: var(--surface); border: 1px solid var(--border); border-radius: 999px; padding: 0.25rem 0.75rem; font-size: 0.75rem; font-weight: 500; color: var(--ink-muted); }
 
-    /* ── CONTACT ── */
+    /* ── RESUME SECTION ── */
+    #resume { background: var(--bg); }
+    .resume-wrapper {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start;
+      margin-top: 2.5rem;
+    }
+    .resume-box {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 2rem;
+      display: flex; flex-direction: column; gap: 1.5rem;
+    }
+    .resume-preview {
+      background: linear-gradient(135deg, #eff4ff 0%, #f0fdf4 100%);
+      border: 2px dashed #bfdbfe;
+      border-radius: 10px;
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+      display: flex; flex-direction: column; align-items: center; gap: 1rem;
+    }
+    .resume-preview-icon { font-size: 3.5rem; }
+    .resume-preview h3 { font-family: 'DM Serif Display',serif; font-size: 1.4rem; color: var(--ink); }
+    .resume-preview p { font-size: 0.9rem; color: var(--ink-muted); max-width: 280px; line-height: 1.6; }
+    .resume-meta { display: flex; flex-direction: column; gap: 0.8rem; }
+    .resume-meta-item {
+      display: flex; align-items: center; gap: 0.75rem;
+      padding: 0.75rem 1rem;
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: 10px; font-size: 0.9rem;
+    }
+    .resume-meta-item .rmi-icon { font-size: 1.2rem; }
+    .resume-meta-item strong { color: var(--ink); font-weight: 600; }
+    .resume-meta-item span { color: var(--ink-muted); font-size: 0.85rem; }
+    .resume-skills-list { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .skill-pill { background: var(--accent-light); color: var(--accent); border: 1px solid #bfdbfe; border-radius: 999px; padding: 0.3rem 0.85rem; font-size: 0.8rem; font-weight: 500; }
+
+    /* ── CERTIFICATES SECTION ── */
+    #certificates { background: var(--surface); }
+    .certs-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+      gap: 1.4rem; margin-top: 2.5rem;
+    }
+    .cert-card {
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.6rem;
+      display: flex; flex-direction: column; gap: 0.8rem;
+      transition: all 0.22s; position: relative; overflow: hidden;
+    }
+    .cert-card::after {
+      content: ''; position: absolute; top: 0; left: 0;
+      width: 4px; height: 100%; background: var(--accent);
+      transform: scaleY(0); transform-origin: bottom;
+      transition: transform 0.3s ease;
+    }
+    .cert-card:hover { transform: translateY(-4px); box-shadow: 0 12px 36px rgba(37,99,235,0.1); border-color: #bfdbfe; }
+    .cert-card:hover::after { transform: scaleY(1); }
+    .cert-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 0.5rem; }
+    .cert-icon { font-size: 2rem; flex-shrink: 0; }
+    .cert-verified { background: #f0fdf4; color: #16a34a; border: 1px solid #bbf7d0; border-radius: 999px; padding: 0.2rem 0.65rem; font-size: 0.72rem; font-weight: 600; white-space: nowrap; }
+    .cert-name { font-family: 'DM Serif Display',serif; font-size: 1.05rem; color: var(--ink); line-height: 1.35; }
+    .cert-issuer { font-size: 0.82rem; font-weight: 600; color: var(--accent); }
+    .cert-date { font-size: 0.78rem; color: var(--ink-muted); }
+    .cert-dl-btn {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      margin-top: 0.4rem;
+      background: var(--accent-light); color: var(--accent);
+      border: 1px solid #bfdbfe; border-radius: 999px;
+      padding: 0.4rem 1rem; font-size: 0.8rem; font-weight: 600;
+      text-decoration: none; transition: all 0.2s;
+      align-self: flex-start;
+    }
+    .cert-dl-btn:hover { background: #dbeafe; transform: translateY(-1px); }
+    .certs-download-row { margin-top: 2.5rem; text-align: center; }
+
+    /* CONTACT */
     #contact { background: var(--ink); }
     #contact .section-label { color: #93c5fd; }
     #contact .section-title { color: #fff; }
     #contact .section-desc { color: #9ca3af; max-width: 500px; }
-    .contact-grid {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 4rem; align-items: center;
-    }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
     .contact-links { display: flex; flex-direction: column; gap: 1rem; margin-top: 1rem; }
-    .contact-item {
-      display: flex; align-items: center; gap: 1rem;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: var(--radius);
-      padding: 1rem 1.3rem;
-      text-decoration: none;
-      color: #fff;
-      transition: all 0.2s;
-    }
+    .contact-item { display: flex; align-items: center; gap: 1rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: var(--radius); padding: 1rem 1.3rem; text-decoration: none; color: #fff; transition: all 0.2s; }
     .contact-item:hover { background: rgba(37,99,235,0.2); border-color: #3b82f6; }
     .contact-item .ci-icon { font-size: 1.4rem; }
     .contact-item .ci-text .ci-label { font-size: 0.75rem; color: #9ca3af; }
     .contact-item .ci-text .ci-val { font-size: 0.95rem; font-weight: 500; }
     .contact-cta { text-align: center; }
     .contact-cta p { color: #9ca3af; font-size: 0.95rem; margin-bottom: 1.5rem; }
-    .btn-white { background: #fff; color: var(--ink); }
-    .btn-white:hover { background: #f3f4f6; transform: translateY(-2px); }
 
-    /* ── FOOTER ── */
-    footer {
-      background: #111111b9;
-      text-align: center;
-      padding: 1.8rem;
-      font-size: 0.85rem;
-      color: #6b7280;
-    }
+    /* FOOTER */
+    footer { background: #111; text-align: center; padding: 1.8rem; font-size: 0.85rem; color: #6b7280; }
     footer a { color: #60a5fa; text-decoration: none; }
 
-    /* ── ANIMATIONS ── */
-    .fade-in {
-      opacity: 0; transform: translateY(24px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
+    /* ANIMATIONS */
+    .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
     .fade-in.visible { opacity: 1; transform: translateY(0); }
 
-    /* ── RESPONSIVE ── */
+    /* RESPONSIVE */
     @media (max-width: 768px) {
       nav { padding: 1rem 5%; }
-      .nav-links { gap: 1.2rem; }
+      .nav-links { gap: 1rem; }
+      .nav-links a { font-size: 0.8rem; }
       #hero { padding: 7rem 5% 4rem; }
-      .hero-grid, .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .hero-grid, .about-grid, .contact-grid, .resume-wrapper { grid-template-columns: 1fr; gap: 2rem; }
       .hero-visual { display: none; }
       section { padding: 4rem 5%; }
       .stats-grid { grid-template-columns: 1fr 1fr; }
@@ -338,6 +215,8 @@
       <li><a href="#about">About</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#projects">Projects</a></li>
+      <li><a href="#resume">Resume</a></li>
+      <li><a href="#certificates">Certificates</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
@@ -348,13 +227,10 @@
       <div class="hero-content fade-in">
         <span class="hero-tag">👋 Available for Internships</span>
         <h1>Hi, I'm <em>Areej Ali</em> Mustafa</h1>
-        <p class="hero-bio">
-          A passionate BS Computer Science student with a love for building 
-          clean, functional software — from web apps to data-driven projects.
-        </p>
+        <p class="hero-bio">A passionate BS Computer Science student with a love for building clean, functional software — from web apps to data-driven projects.</p>
         <div class="hero-cta">
           <a href="#projects" class="btn btn-primary">View My Work →</a>
-          <a href="#contact" class="btn btn-outline">Get in Touch</a>
+          <a href="#resume" class="btn btn-outline">📄 Download Resume</a>
         </div>
       </div>
       <div class="hero-visual fade-in">
@@ -374,40 +250,21 @@
       <div class="about-grid">
         <div class="about-text fade-in">
           <h2 class="section-title">Turning ideas into<br/>working code</h2>
-          <p>
-            I'm Areej Ali Mustafa, a dedicated Computer Science undergraduate.I enjoy solving problems through technology and am constantly expanding my skillset 
-            across web development, programming, and databases.
-          </p>
-          <p>
-            Whether it's building interactive front-ends with HTML/CSS/JavaScript, 
-            writing efficient back-end logic in Python, or managing data with MongoDB — 
-            I bring curiosity and commitment to every project I work on.
-          </p>
+          <p>I'm Areej Ali Mustafa, a dedicated Computer Science undergraduate. I enjoy solving problems through technology and am constantly expanding my skillset across web development, programming, and databases.</p>
+          <p>Whether it's building interactive front-ends with HTML/CSS/JavaScript, writing efficient back-end logic in Python, or managing data with MongoDB — I bring curiosity and commitment to every project I work on.</p>
           <ul class="info-list">
             <li><span>Degree</span><span>BS Computer Science</span></li>
             <li><span>Batch</span><span>24F</span></li>
-            <li><span>Focus</span><span>Web Dev & Programming</span></li>
+            <li><span>University</span><span>Dawood University, Karachi</span></li>
             <li><span>Status</span><span>Open to Internships</span></li>
           </ul>
         </div>
         <div class="fade-in">
           <div class="stats-grid">
-            <div class="stat-card">
-              <span class="num">6+</span>
-              <div class="lbl">Technologies Learned</div>
-            </div>
-            <div class="stat-card">
-              <span class="num">24F</span>
-              <div class="lbl">Current Batch</div>
-            </div>
-            <div class="stat-card">
-              <span class="num">∞</span>
-              <div class="lbl">Curiosity to Learn</div>
-            </div>
-            <div class="stat-card">
-              <span class="num">💡</span>
-              <div class="lbl">Problem Solver</div>
-            </div>
+            <div class="stat-card"><span class="num">13+</span><div class="lbl">GitHub Projects</div></div>
+            <div class="stat-card"><span class="num">6</span><div class="lbl">Certificates Earned</div></div>
+            <div class="stat-card"><span class="num">∞</span><div class="lbl">Curiosity to Learn</div></div>
+            <div class="stat-card"><span class="num">💡</span><div class="lbl">Problem Solver</div></div>
           </div>
         </div>
       </div>
@@ -421,36 +278,14 @@
       <h2 class="section-title fade-in">My Toolkit</h2>
       <p class="section-desc fade-in">Technologies and languages I work with to bring ideas to life.</p>
       <div class="skills-grid">
-        <div class="skill-card fade-in">
-          <span class="skill-icon">🐍</span>
-          <div class="skill-name">Python</div>
-          <div class="skill-level">Proficient</div>
-        </div>
-        <div class="skill-card fade-in">
-          <span class="skill-icon">🌐</span>
-          <div class="skill-name">HTML</div>
-          <div class="skill-level">Proficient</div>
-        </div>
-        <div class="skill-card fade-in">
-          <span class="skill-icon">🎨</span>
-          <div class="skill-name">CSS</div>
-          <div class="skill-level">Proficient</div>
-        </div>
-        <div class="skill-card fade-in">
-          <span class="skill-icon">⚡</span>
-          <div class="skill-name">JavaScript</div>
-          <div class="skill-level">Intermediate</div>
-        </div>
-        <div class="skill-card fade-in">
-          <span class="skill-icon">🍃</span>
-          <div class="skill-name">MongoDB</div>
-          <div class="skill-level">Intermediate</div>
-        </div>
-        <div class="skill-card fade-in">
-          <span class="skill-icon">⚙️</span>
-          <div class="skill-name">C++</div>
-          <div class="skill-level">Intermediate</div>
-        </div>
+        <div class="skill-card fade-in"><span class="skill-icon">🐍</span><div class="skill-name">Python</div><div class="skill-level">Proficient</div></div>
+        <div class="skill-card fade-in"><span class="skill-icon">🌐</span><div class="skill-name">HTML</div><div class="skill-level">Proficient</div></div>
+        <div class="skill-card fade-in"><span class="skill-icon">🎨</span><div class="skill-name">CSS</div><div class="skill-level">Proficient</div></div>
+        <div class="skill-card fade-in"><span class="skill-icon">⚡</span><div class="skill-name">JavaScript</div><div class="skill-level">Intermediate</div></div>
+        <div class="skill-card fade-in"><span class="skill-icon">🍃</span><div class="skill-name">MongoDB</div><div class="skill-level">Intermediate</div></div>
+        <div class="skill-card fade-in"><span class="skill-icon">⚙️</span><div class="skill-name">C++</div><div class="skill-level">Intermediate</div></div>
+        <div class="skill-card fade-in"><span class="skill-icon">☕</span><div class="skill-name">Java</div><div class="skill-level">Intermediate</div></div>
+        <div class="skill-card fade-in"><span class="skill-icon">🗄️</span><div class="skill-name">Git & GitHub</div><div class="skill-level">Proficient</div></div>
       </div>
     </div>
   </section>
@@ -462,138 +297,228 @@
       <h2 class="section-title fade-in">Things I've Built</h2>
       <p class="section-desc fade-in">A selection of projects I've pushed to GitHub. Each one taught me something new.</p>
       <div class="projects-grid">
-
         <div class="project-card fade-in">
-          <div class="project-header">
-            <span class="project-icon">✈️</span>
-            <a href="https://github.com/areej0345/airline-management-system" target="_blank" class="project-link">GitHub ↗</a>
-          </div>
+          <div class="project-header"><span class="project-icon">✈️</span><a href="https://github.com/areej0345/airline-management-system" target="_blank" class="project-link">GitHub ↗</a></div>
           <div class="project-name">Airline Management System</div>
           <p class="project-desc">A web-based airline management system built with HTML. Manages flights, bookings, and passenger information.</p>
           <div class="project-tags"><span class="tag">HTML</span><span class="tag">Web</span></div>
         </div>
-
         <div class="project-card fade-in">
-          <div class="project-header">
-            <span class="project-icon">🔧</span>
-            <a href="https://github.com/areej0345/maintenance-app" target="_blank" class="project-link">GitHub ↗</a>
-          </div>
+          <div class="project-header"><span class="project-icon">🔧</span><a href="https://github.com/areej0345/maintenance-app" target="_blank" class="project-link">GitHub ↗</a></div>
           <div class="project-name">Maintenance App</div>
           <p class="project-desc">An HTML-based maintenance tracking application to log and manage maintenance requests efficiently.</p>
           <div class="project-tags"><span class="tag">HTML</span><span class="tag">Web</span></div>
         </div>
-
         <div class="project-card fade-in">
-          <div class="project-header">
-            <span class="project-icon">💰</span>
-            <a href="https://github.com/areej0345/maintenance-cost-portal" target="_blank" class="project-link">GitHub ↗</a>
-          </div>
+          <div class="project-header"><span class="project-icon">💰</span><a href="https://github.com/areej0345/maintenance-cost-portal" target="_blank" class="project-link">GitHub ↗</a></div>
           <div class="project-name">Maintenance Cost Portal</div>
           <p class="project-desc">A web portal built with HTML to track and calculate maintenance costs across different departments.</p>
           <div class="project-tags"><span class="tag">HTML</span><span class="tag">Web</span></div>
         </div>
-
         <div class="project-card fade-in">
-          <div class="project-header">
-            <span class="project-icon">🎓</span>
-            <a href="https://github.com/areej0345/studentregidtrationsystem" target="_blank" class="project-link">GitHub ↗</a>
-          </div>
+          <div class="project-header"><span class="project-icon">🎓</span><a href="https://github.com/areej0345/studentregidtrationsystem" target="_blank" class="project-link">GitHub ↗</a></div>
           <div class="project-name">Student Registration System</div>
           <p class="project-desc">A Java-based student registration system to enroll, manage, and track student records and courses.</p>
           <div class="project-tags"><span class="tag">Java</span><span class="tag">OOP</span></div>
         </div>
-
         <div class="project-card fade-in">
-          <div class="project-header">
-            <span class="project-icon">👨‍💼</span>
-            <a href="https://github.com/areej0345/EmployeeRecordSystem" target="_blank" class="project-link">GitHub ↗</a>
-          </div>
+          <div class="project-header"><span class="project-icon">👨‍💼</span><a href="https://github.com/areej0345/EmployeeRecordSystem" target="_blank" class="project-link">GitHub ↗</a></div>
           <div class="project-name">Employee Record System</div>
           <p class="project-desc">A Java application to manage employee records including hiring, salary, and department management.</p>
           <div class="project-tags"><span class="tag">Java</span><span class="tag">OOP</span></div>
         </div>
-
         <div class="project-card fade-in">
-          <div class="project-header">
-            <span class="project-icon">🗂️</span>
-            <a href="https://github.com/areej0345/Data-Structures-Project" target="_blank" class="project-link">GitHub ↗</a>
-          </div>
+          <div class="project-header"><span class="project-icon">🗂️</span><a href="https://github.com/areej0345/Data-Structures-Project" target="_blank" class="project-link">GitHub ↗</a></div>
           <div class="project-name">Data Structures Project</div>
-          <p class="project-desc">A C++ project implementing core data structures like linked lists, stacks, queues, and trees.</p>
+          <p class="project-desc">A C++ project implementing core data structures like linked lists, BST, stacks, queues, and trees.</p>
           <div class="project-tags"><span class="tag">C++</span><span class="tag">Data Structures</span></div>
         </div>
-
         <div class="project-card fade-in">
-          <div class="project-header">
-            <span class="project-icon">⚙️</span>
-            <a href="https://github.com/areej0345/AlgorithmProject" target="_blank" class="project-link">GitHub ↗</a>
-          </div>
+          <div class="project-header"><span class="project-icon">⚙️</span><a href="https://github.com/areej0345/AlgorithmProject" target="_blank" class="project-link">GitHub ↗</a></div>
           <div class="project-name">Algorithm Project</div>
           <p class="project-desc">A C++ project focused on implementing and analyzing classic algorithms including sorting and searching.</p>
           <div class="project-tags"><span class="tag">C++</span><span class="tag">Algorithms</span></div>
         </div>
-
         <div class="project-card fade-in">
-          <div class="project-header">
-            <span class="project-icon">📚</span>
-            <a href="https://github.com/areej0345/LibraryManager" target="_blank" class="project-link">GitHub ↗</a>
-          </div>
+          <div class="project-header"><span class="project-icon">📚</span><a href="https://github.com/areej0345/LibraryManager" target="_blank" class="project-link">GitHub ↗</a></div>
           <div class="project-name">Library Manager</div>
           <p class="project-desc">A C++ library management system to add, search, and manage books with a menu-driven interface.</p>
           <div class="project-tags"><span class="tag">C++</span><span class="tag">File Handling</span></div>
         </div>
-
         <div class="project-card fade-in">
-          <div class="project-header">
-            <span class="project-icon">🐍</span>
-            <a href="https://github.com/areej0345/ocr_project" target="_blank" class="project-link">GitHub ↗</a>
-          </div>
+          <div class="project-header"><span class="project-icon">🐍</span><a href="https://github.com/areej0345/ocr_project" target="_blank" class="project-link">GitHub ↗</a></div>
           <div class="project-name">OCR Project</div>
           <p class="project-desc">A Python-based Optical Character Recognition project that extracts text from images using computer vision.</p>
           <div class="project-tags"><span class="tag">Python</span><span class="tag">OCR</span></div>
         </div>
-
         <div class="project-card fade-in">
-          <div class="project-header">
-            <span class="project-icon">🏧</span>
-            <a href="https://github.com/areej0345/ATMProject" target="_blank" class="project-link">GitHub ↗</a>
-          </div>
+          <div class="project-header"><span class="project-icon">🏧</span><a href="https://github.com/areej0345/ATMProject" target="_blank" class="project-link">GitHub ↗</a></div>
           <div class="project-name">ATM Project</div>
           <p class="project-desc">A simulated ATM system in Java featuring account management, deposits, withdrawals, and PIN authentication.</p>
           <div class="project-tags"><span class="tag">Java</span><span class="tag">OOP</span></div>
         </div>
-<div class="project-card fade-in">
-          <div class="project-header">
-            <span class="project-icon">🖥️</span>
-            <a href="https://github.com/areej0345/face_emotion_project" 
-               target="_blank" class="project-link">GitHub ↗</a>
-          </div>
-          <div class="project-name">face emotion project</div>
-          <p class="project-desc">
-            A Python project that uses computer vision to detect and classify facial emotions in real-time.
-          </p>
-          <div class="project-tags">
-            <span class="tag">Python</span>
-            <span class="tag">Computer Vision</span>
-          </div>
+        <div class="project-card fade-in">
+          <div class="project-header"><span class="project-icon">😊</span><a href="https://github.com/areej0345/face_emotion_project" target="_blank" class="project-link">GitHub ↗</a></div>
+          <div class="project-name">Face Emotion Detection</div>
+          <p class="project-desc">A Python project that uses computer vision to detect and classify facial emotions in real-time.</p>
+          <div class="project-tags"><span class="tag">Python</span><span class="tag">Computer Vision</span></div>
         </div>
         <div class="project-card fade-in">
-          <div class="project-header">
-            <span class="project-icon">🖥️</span>
-            <a href="https://github.com/areej0345/my_calculator" 
-               target="_blank" class="project-link">GitHub ↗</a>
-          </div>
+          <div class="project-header"><span class="project-icon">🧮</span><a href="https://github.com/areej0345/my_calculator" target="_blank" class="project-link">GitHub ↗</a></div>
           <div class="project-name">My Calculator</div>
-          <p class="project-desc">
-            A simple calculator application built with html, css, and javascript.
-          </p>
-          <div class="project-tags">
-            <span class="tag">HTML</span>
-            <span class="tag">CSS</span>
-            <span class="tag">JavaScript</span>
-          
+          <p class="project-desc">A simple calculator application built with HTML, CSS, and JavaScript with a clean UI.</p>
+          <div class="project-tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ RESUME SECTION ═══ -->
+  <section id="resume">
+    <div class="section-inner">
+      <p class="section-label fade-in">Resume</p>
+      <h2 class="section-title fade-in">Download My <em style="font-style:italic;color:var(--accent)">Resume</em></h2>
+      <p class="section-desc fade-in">My complete resume with education, projects, skills and certifications — ready to download.</p>
+
+      <div class="resume-wrapper">
+        <!-- Left: Preview Card -->
+        <div class="fade-in">
+          <div class="resume-box">
+            <div class="resume-preview">
+              <div class="resume-preview-icon">📄</div>
+              <h3>Areej Ali Mustafa</h3>
+              <p>BS Computer Science · Dawood University · 4th Semester · Karachi, Pakistan</p>
+              <a href="Areej_Ali_Mustafa_Resume.pdf" download class="btn-download">
+                ⬇️ Download Resume (.pdf)
+              </a>
+            </div>
           </div>
         </div>
+
+        <!-- Right: Resume details -->
+        <div class="fade-in">
+          <div class="resume-box">
+            <div class="resume-meta">
+              <div class="resume-meta-item">
+                <span class="rmi-icon">🎓</span>
+                <div><strong>BS Computer Science</strong><br/><span>Dawood University of Engineering & Technology · 2023–Present</span></div>
+              </div>
+              <div class="resume-meta-item">
+                <span class="rmi-icon">📍</span>
+                <div><strong>Location</strong><br/><span>Karachi, Pakistan</span></div>
+              </div>
+              <div class="resume-meta-item">
+                <span class="rmi-icon">✉️</span>
+                <div><strong>Email</strong><br/><span>areejalimustafa1@gmail.com</span></div>
+              </div>
+              <div class="resume-meta-item">
+                <span class="rmi-icon">🔗</span>
+                <div><strong>GitHub</strong><br/><span>github.com/areej0345</span></div>
+              </div>
+            </div>
+            <div>
+              <p style="font-size:0.85rem;font-weight:600;color:var(--ink-muted);margin-bottom:0.6rem;text-transform:uppercase;letter-spacing:0.06em;">Top Skills</p>
+              <div class="resume-skills-list">
+                <span class="skill-pill">C++</span>
+                <span class="skill-pill">Python</span>
+                <span class="skill-pill">Java</span>
+                <span class="skill-pill">HTML/CSS</span>
+                <span class="skill-pill">JavaScript</span>
+                <span class="skill-pill">MongoDB</span>
+                <span class="skill-pill">Data Structures</span>
+                <span class="skill-pill">OOP</span>
+                <span class="skill-pill">Git & GitHub</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CERTIFICATES SECTION ═══ -->
+  <section id="certificates">
+    <div class="section-inner">
+      <p class="section-label fade-in">Certifications</p>
+      <h2 class="section-title fade-in">My <em style="font-style:italic;color:var(--accent)">Certificates</em></h2>
+      <p class="section-desc fade-in">Verified online courses and certifications I've completed to keep growing my skills.</p>
+
+      <div class="certs-grid">
+
+        <div class="cert-card fade-in">
+          <div class="cert-top">
+            <span class="cert-icon">🎨</span>
+            <span class="cert-verified">✔ Verified</span>
+          </div>
+          <div class="cert-name">Use Canva to Design Digital Course Collateral</div>
+          <div class="cert-issuer">Coursera Project Network</div>
+          <div class="cert-date">📅 Issued Sep 2025</div>
+          <a href="cert_canva.pdf" download class="cert-dl-btn">⬇️ Download Certificate</a>
+        </div>
+
+        <div class="cert-card fade-in">
+          <div class="cert-top">
+            <span class="cert-icon">📊</span>
+            <span class="cert-verified">✔ Verified</span>
+          </div>
+          <div class="cert-name">Getting Started with Microsoft Excel</div>
+          <div class="cert-issuer">Coursera Project Network</div>
+          <div class="cert-date">📅 Issued Sep 2025</div>
+          <a href="cert_excel.pdf" download class="cert-dl-btn">⬇️ Download Certificate</a>
+        </div>
+
+        <div class="cert-card fade-in">
+          <div class="cert-top">
+            <span class="cert-icon">📈</span>
+            <span class="cert-verified">✔ Verified</span>
+          </div>
+          <div class="cert-name">Getting Started in Google Analytics</div>
+          <div class="cert-issuer">Coursera</div>
+          <div class="cert-date">📅 Issued Jan 2026</div>
+          <a href="cert_analytics.pdf" download class="cert-dl-btn">⬇️ Download Certificate</a>
+        </div>
+
+        <div class="cert-card fade-in">
+          <div class="cert-top">
+            <span class="cert-icon">📣</span>
+            <span class="cert-verified">✔ Verified</span>
+          </div>
+          <div class="cert-name">Google Ads for Beginners</div>
+          <div class="cert-issuer">Coursera</div>
+          <div class="cert-date">📅 Issued Jun 2026</div>
+          <a href="cert_google_ads.pdf" download class="cert-dl-btn">⬇️ Download Certificate</a>
+        </div>
+
+        <div class="cert-card fade-in">
+          <div class="cert-top">
+            <span class="cert-icon">🌐</span>
+            <span class="cert-verified">✔ Verified</span>
+          </div>
+          <div class="cert-name">Build a Free Website with WordPress</div>
+          <div class="cert-issuer">Coursera</div>
+          <div class="cert-date">📅 Issued Jun 2026</div>
+          <a href="cert_wordpress.pdf" download class="cert-dl-btn">⬇️ Download Certificate</a>
+        </div>
+
+        <div class="cert-card fade-in">
+          <div class="cert-top">
+            <span class="cert-icon">💻</span>
+            <span class="cert-verified">✔ Verified</span>
+          </div>
+          <div class="cert-name">Introduction to HTML and CSS</div>
+          <div class="cert-issuer">Alison</div>
+          <div class="cert-date">📅 Issued Jul 2026</div>
+          <a href="cert_html_css.pdf" download class="cert-dl-btn">⬇️ Download Certificate</a>
+        </div>
+
+      </div>
+
+      <!-- Download button -->
+      <div class="certs-download-row fade-in">
+        <p style="color:var(--ink-muted);margin-bottom:1rem;font-size:0.95rem;">All certificates are also included in the resume file</p>
+        <a href="Areej_Ali_Mustafa_Resume.pdf" download class="btn-download">
+          ⬇️ Download Resume with All Certificates
+        </a>
       </div>
     </div>
   </section>
@@ -605,39 +530,25 @@
         <div class="fade-in">
           <p class="section-label">Contact</p>
           <h2 class="section-title">Let's Connect</h2>
-          <p class="section-desc">
-            I'm open to internship opportunities, collaborations, or just a friendly chat about tech. 
-            Feel free to reach out!
-          </p>
+          <p class="section-desc">I'm open to internship opportunities, collaborations, or just a friendly chat about tech. Feel free to reach out!</p>
           <div class="contact-links">
             <a href="https://github.com/areej0345" target="_blank" class="contact-item">
               <span class="ci-icon">🐙</span>
-              <div class="ci-text">
-                <div class="ci-label">GitHub</div>
-                <div class="ci-val">github.com/areej0345</div>
-              </div>
+              <div class="ci-text"><div class="ci-label">GitHub</div><div class="ci-val">github.com/areej0345</div></div>
             </a>
             <a href="mailto:areejalimustafa1@gmail.com" class="contact-item">
               <span class="ci-icon">📧</span>
-              <div class="ci-text">
-                <div class="ci-label">Email</div>
-                <div class="ci-val">areejalimustafa1@gmail.com</div>
-              </div>
+              <div class="ci-text"><div class="ci-label">Email</div><div class="ci-val">areejalimustafa1@gmail.com</div></div>
             </a>
             <a href="https://www.linkedin.com/in/areej-ali-558b39295/" target="_blank" class="contact-item">
               <span class="ci-icon">💼</span>
-              <div class="ci-text">
-                <div class="ci-label">LinkedIn</div>
-                <div class="ci-val">linkedin.com/in/areej-ali</div>
-              </div>
+              <div class="ci-text"><div class="ci-label">LinkedIn</div><div class="ci-val">linkedin.com/in/areej-ali-558b39295</div></div>
             </a>
           </div>
         </div>
         <div class="contact-cta fade-in">
           <p>Want to see my latest code? Check out my GitHub profile for all my projects and contributions.</p>
-          <a href="https://github.com/areej0345" target="_blank" class="btn btn-white">
-            🐙 View GitHub Profile
-          </a>
+          <a href="https://github.com/areej0345" target="_blank" class="btn btn-white">🐙 View GitHub Profile</a>
         </div>
       </div>
     </div>
@@ -651,7 +562,6 @@
   </footer>
 
   <script>
-    // Intersection Observer for fade-in animations
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry, i) => {
         if (entry.isIntersecting) {
@@ -659,20 +569,14 @@
         }
       });
     }, { threshold: 0.1 });
-
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-    // Smooth active nav highlighting
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-links a');
     window.addEventListener('scroll', () => {
       let current = '';
-      sections.forEach(s => {
-        if (window.scrollY >= s.offsetTop - 100) current = s.id;
-      });
-      navLinks.forEach(a => {
-        a.style.color = a.getAttribute('href') === `#${current}` ? 'var(--accent)' : '';
-      });
+      sections.forEach(s => { if (window.scrollY >= s.offsetTop - 100) current = s.id; });
+      navLinks.forEach(a => { a.style.color = a.getAttribute('href') === `#${current}` ? 'var(--accent)' : ''; });
     });
   </script>
 </body>
