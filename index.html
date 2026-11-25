@@ -4,103 +4,93 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Areej Ali Mustafa - Computer Science Portfolio">
 <title>Areej Ali Mustafa | Portfolio</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 :root {
   --bg:#0b1020;
   --surface:#121a2e;
-  --surface-light:#19243b;
+  --surface2:#19243b;
   --text:#f3f6ff;
   --muted:#a6b0c5;
   --accent:#8b7cff;
   --accent2:#42d6c5;
-  --border:rgba(255,255,255,.10);
+  --border:rgba(255,255,255,.1);
 }
-* {margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
-body {background:var(--bg);color:var(--text);font-family:"DM Sans",sans-serif;line-height:1.7}
-a {color:inherit;text-decoration:none}
-.container {width:min(1120px,90%);margin:auto}
-header {position:sticky;top:0;z-index:100;background:rgba(11,16,32,.96);backdrop-filter:blur(15px);border-bottom:1px solid var(--border)}
-nav {min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.logo {font-family:"Space Grotesk",sans-serif;font-size:23px;font-weight:700}
-.logo span {color:var(--accent)}
-.nav-links {display:flex;align-items:center;gap:20px;list-style:none}
-.nav-links a {color:var(--muted);font-size:14px;transition:.3s}
-.nav-links a:hover {color:var(--accent2)}
-.menu-btn {display:none;background:transparent;color:white;border:1px solid var(--border);border-radius:8px;padding:7px 12px;font-size:20px;cursor:pointer}
-section {padding:85px 0;scroll-margin-top:75px}
-.section-heading {text-align:center;margin-bottom:42px}
-.section-heading h2 {font-family:"Space Grotesk",sans-serif;font-size:clamp(28px,4vw,38px);margin-bottom:8px}
-.section-heading p {color:var(--muted)}
-.accent {color:var(--accent2)}
-.hero {min-height:620px;display:flex;align-items:center;padding:100px 0;background:radial-gradient(circle at 80% 20%,rgba(139,124,255,.17),transparent 30%),radial-gradient(circle at 15% 80%,rgba(66,214,197,.10),transparent 28%)}
-.hero-content {max-width:780px}
-.eyebrow {display:inline-block;color:var(--accent2);background:rgba(66,214,197,.09);border:1px solid rgba(66,214,197,.25);border-radius:30px;padding:7px 15px;font-size:13px;margin-bottom:22px}
-.hero h1 {font-family:"Space Grotesk",sans-serif;font-size:clamp(38px,7vw,68px);line-height:1.12;margin-bottom:18px}
-.hero h1 span {color:var(--accent)}
-.hero h3 {font-size:21px;color:var(--accent2);margin-bottom:18px;font-weight:500}
-.hero p {color:var(--muted);max-width:680px;margin-bottom:28px}
-.buttons {display:flex;flex-wrap:wrap;gap:12px}
-.btn {display:inline-block;padding:12px 21px;border-radius:9px;font-weight:600;font-size:14px;transition:.3s}
-.btn-primary {color:#0b1020;background:var(--accent2)}
-.btn-primary:hover {transform:translateY(-3px);box-shadow:0 8px 25px rgba(66,214,197,.2)}
-.btn-outline {border:1px solid var(--border);color:var(--text)}
-.btn-outline:hover {border-color:var(--accent);color:var(--accent)}
-.about-content {display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:start}
-.about-text,.info-card,.skill-card,.project-card,.certificate-card,.extra-card {background:var(--surface);border:1px solid var(--border);border-radius:15px;padding:25px}
-.about-text p {color:var(--muted);margin-bottom:15px}
-.info-card h3 {margin-bottom:15px;font-family:"Space Grotesk",sans-serif}
-.info-item {padding:11px 0;border-bottom:1px solid var(--border)}
-.info-item:last-child {border:0}
-.info-item strong {display:block;color:var(--accent2);font-size:13px}
-.info-item span {color:var(--muted);font-size:14px}
-.skills-grid {display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.skill-card,.project-card,.certificate-card {transition:.3s}
-.skill-card:hover,.project-card:hover,.certificate-card:hover {transform:translateY(-5px);border-color:rgba(139,124,255,.55)}
-.skill-card h3 {font-family:"Space Grotesk",sans-serif;margin-bottom:14px;color:var(--accent2)}
-.tags {display:flex;flex-wrap:wrap;gap:8px}
-.tag {background:var(--surface-light);border:1px solid var(--border);border-radius:7px;padding:5px 10px;color:var(--muted);font-size:12px}
-.experience-card {max-width:820px;margin:auto;padding:30px;background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--accent2);border-radius:14px}
-.experience-card h3 {font-size:22px;margin-bottom:5px}
-.company {color:var(--accent2);font-weight:600}
-.date {color:var(--muted);font-size:13px;margin:8px 0 15px}
-.experience-card p,.experience-card li {color:var(--muted)}
-.experience-card ul {padding-left:20px;margin-top:12px}
-.projects-grid {display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.project-card {display:flex;flex-direction:column;min-height:190px}
-.project-card h3 {font-family:"Space Grotesk",sans-serif;font-size:18px;margin-bottom:9px}
-.project-card p {color:var(--muted);font-size:13px;margin-bottom:18px;flex:1}
-.project-link {color:var(--accent2);font-size:13px;font-weight:700}
-.project-link:hover {color:var(--accent)}
-.certificates-grid {display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-.certificate-card h3 {font-family:"Space Grotesk",sans-serif;font-size:17px;margin-bottom:7px}
-.certificate-card p {color:var(--muted);font-size:13px;margin-bottom:15px}
-.certificate-actions {display:flex;flex-wrap:wrap;gap:14px}
-.certificate-actions a {color:var(--accent2);font-weight:700;font-size:13px}
-.certificate-actions a:hover {color:var(--accent)}
-.extra-grid {display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.extra-card h3 {color:var(--accent2);margin-bottom:16px}
-.contact-box {max-width:720px;margin:auto;text-align:center;background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:40px 25px}
-.contact-box p {color:var(--muted);margin:12px 0 25px}
-.contact-links {display:flex;justify-content:center;flex-wrap:wrap;gap:12px}
-footer {border-top:1px solid var(--border);text-align:center;padding:25px 10px;color:var(--muted);font-size:13px}
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:"DM Sans",sans-serif;line-height:1.7}
+a{text-decoration:none;color:inherit}
+.container{width:min(1120px,90%);margin:auto}
+header{position:sticky;top:0;z-index:100;background:rgba(11,16,32,.96);border-bottom:1px solid var(--border);backdrop-filter:blur(15px)}
+nav{min-height:72px;display:flex;align-items:center;justify-content:space-between}
+.logo{font:700 23px "Space Grotesk"}
+.logo span{color:var(--accent)}
+.nav-links{display:flex;gap:20px;list-style:none}
+.nav-links a{color:var(--muted);font-size:14px}
+.nav-links a:hover{color:var(--accent2)}
+.menu-btn{display:none;background:none;color:white;border:1px solid var(--border);padding:7px 12px;border-radius:8px;font-size:20px}
+section{padding:85px 0;scroll-margin-top:75px}
+.section-heading{text-align:center;margin-bottom:42px}
+.section-heading h2{font:700 clamp(28px,4vw,38px) "Space Grotesk";margin-bottom:8px}
+.section-heading p,.muted{color:var(--muted)}
+.accent{color:var(--accent2)}
+.hero{min-height:620px;display:flex;align-items:center;background:radial-gradient(circle at 80% 20%,rgba(139,124,255,.17),transparent 30%),radial-gradient(circle at 15% 80%,rgba(66,214,197,.1),transparent 28%)}
+.hero-content{max-width:780px}
+.eyebrow{display:inline-block;color:var(--accent2);background:rgba(66,214,197,.09);border:1px solid rgba(66,214,197,.25);border-radius:30px;padding:7px 15px;font-size:13px;margin-bottom:22px}
+.hero h1{font:700 clamp(38px,7vw,68px)/1.12 "Space Grotesk";margin-bottom:18px}
+.hero h1 span{color:var(--accent)}
+.hero h3{font-size:21px;color:var(--accent2);margin-bottom:18px;font-weight:500}
+.hero p{color:var(--muted);max-width:680px;margin-bottom:28px}
+.buttons,.certificate-actions,.contact-links{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;padding:11px 19px;border-radius:9px;font-weight:600;font-size:14px;transition:.3s}
+.btn-primary{color:#0b1020;background:var(--accent2)}
+.btn-outline{border:1px solid var(--border);color:var(--text)}
+.btn:hover{transform:translateY(-2px)}
+.about-content{display:grid;grid-template-columns:1.2fr .8fr;gap:25px}
+.about-text,.info-card,.skill-card,.project-card,.certificate-card,.experience-card,.extra-card,.contact-box{background:var(--surface);border:1px solid var(--border);border-radius:15px;padding:25px}
+.about-text p{color:var(--muted);margin-bottom:15px}
+.info-card h3{margin-bottom:15px}
+.info-item{padding:11px 0;border-bottom:1px solid var(--border)}
+.info-item strong{display:block;color:var(--accent2);font-size:13px}
+.info-item span{color:var(--muted);font-size:14px}
+.skills-grid,.projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.skill-card h3{color:var(--accent2);margin-bottom:14px}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tag{background:var(--surface2);border:1px solid var(--border);border-radius:7px;padding:5px 10px;color:var(--muted);font-size:12px}
+.experience-card{max-width:850px;margin:auto;border-left:4px solid var(--accent2)}
+.experience-card h3{font-size:23px}
+.company{color:var(--accent2);font-weight:600}
+.date{color:var(--muted);font-size:13px;margin:8px 0 15px}
+.experience-card p,.experience-card li{color:var(--muted)}
+.experience-card ul{padding-left:20px;margin:12px 0 20px}
+.internship-certificate{margin-top:25px;padding-top:20px;border-top:1px solid var(--border)}
+.internship-certificate h4{font-size:17px;margin-bottom:5px;color:var(--accent2)}
+.internship-certificate p{margin-bottom:14px}
+.project-card{display:flex;flex-direction:column;min-height:190px;transition:.3s}
+.project-card:hover,.skill-card:hover,.certificate-card:hover{transform:translateY(-4px);border-color:var(--accent)}
+.project-card h3,.certificate-card h3{font:600 18px "Space Grotesk";margin-bottom:9px}
+.project-card p,.certificate-card p{color:var(--muted);font-size:13px;margin-bottom:17px}
+.project-link,.certificate-actions a{color:var(--accent2);font-size:13px;font-weight:700}
+.project-link{margin-top:auto}
+.certificates-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.extra-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.extra-card h3{color:var(--accent2);margin-bottom:16px}
+.contact-box{max-width:720px;margin:auto;text-align:center;padding:40px 25px}
+.contact-box p{color:var(--muted);margin:12px 0 25px}
+.contact-links{justify-content:center}
+footer{border-top:1px solid var(--border);text-align:center;padding:25px;color:var(--muted);font-size:13px}
 
-@media(max-width:850px) {
-  .projects-grid,.skills-grid {grid-template-columns:repeat(2,1fr)}
+@media(max-width:850px){
+ .projects-grid,.skills-grid{grid-template-columns:repeat(2,1fr)}
 }
-@media(max-width:650px) {
-  .menu-btn {display:block}
-  .nav-links {display:none;position:absolute;top:72px;left:0;right:0;background:var(--surface);padding:20px 5%;flex-direction:column;align-items:flex-start;gap:16px;border-bottom:1px solid var(--border)}
-  .nav-links.active {display:flex}
-  .about-content,.skills-grid,.projects-grid,.certificates-grid,.extra-grid {grid-template-columns:1fr}
-  section {padding:65px 0}
-  .hero {min-height:550px}
-  .hero h1 {font-size:42px}
+@media(max-width:650px){
+ .menu-btn{display:block;cursor:pointer}
+ .nav-links{display:none;position:absolute;top:72px;left:0;right:0;background:var(--surface);padding:20px 5%;flex-direction:column}
+ .nav-links.active{display:flex}
+ .about-content,.skills-grid,.projects-grid,.certificates-grid,.extra-grid{grid-template-columns:1fr}
+ section{padding:65px 0}
+ .hero{min-height:550px}
 }
 </style>
 </head>
@@ -151,7 +141,7 @@ footer {border-top:1px solid var(--border);text-align:center;padding:25px 10px;c
 <div class="about-text">
 <p>I am Areej Ali Mustafa, a BS Computer Science student at Dawood University of Engineering and Technology.</p>
 <p>I have hands-on experience through an IT internship and academic projects. My interests include General IT, software development, web technologies, databases and artificial intelligence.</p>
-<p>I enjoy learning new technologies, solving problems and applying programming concepts through practical projects. I aim to continue improving my technical skills and gaining professional experience.</p>
+<p>I enjoy learning new technologies, solving problems and applying programming concepts through practical projects.</p>
 </div>
 <div class="info-card">
 <h3>Education</h3>
@@ -209,6 +199,15 @@ footer {border-top:1px solid var(--border);text-align:center;padding:25px 10px;c
 <li>Worked with Git and GitHub.</li>
 <li>Worked with Railway and Streamlit Community Cloud deployment.</li>
 </ul>
+
+<div class="internship-certificate">
+<h4>Internship Certificate</h4>
+<p>Certificate of Appreciation — Summer Social Internship Program 2026</p>
+<div class="certificate-actions">
+<a href="alkhidmat%20foundation%20internship%20certificate%20.pdf" target="_blank" rel="noopener">View Internship Certificate ↗</a>
+<a href="alkhidmat%20foundation%20internship%20certificate%20.pdf" download>Download Certificate ↓</a>
+</div>
+</div>
 </div>
 </div>
 </section>
@@ -220,39 +219,22 @@ footer {border-top:1px solid var(--border);text-align:center;padding:25px 10px;c
 <p>Academic and personal projects.</p>
 </div>
 <div class="projects-grid">
-
-<div class="project-card"><h3>Live Session Toolkit</h3><p>Full-stack session toolkit with Streamlit frontend, FastAPI backend and MySQL database.</p><a class="project-link" href="https://github.com/UzmaAli/the-live-session-toolkit" target="_blank" rel="noopener">View on GitHub ↗</a></div>
-
-<div class="project-card"><h3>GestureX – Hand Gesture Recognition</h3><p>Hand tracking and gesture recognition using OpenCV and MediaPipe.</p><a class="project-link" href="https://github.com/areej0345/GestureX" target="_blank" rel="noopener">View on GitHub ↗</a></div>
-
-<div class="project-card"><h3>Face Emotion Detection</h3><p>Facial emotion classification using a CNN model with TensorFlow, Keras and OpenCV.</p><a class="project-link" href="https://github.com/areej0345/face_emotion_project" target="_blank" rel="noopener">View on GitHub ↗</a></div>
-
-<div class="project-card"><h3>Student Registration System</h3><p>Java application using MySQL database management.</p><a class="project-link" href="https://github.com/areej0345/studentregidtrationsystem" target="_blank" rel="noopener">View on GitHub ↗</a></div>
-
-<div class="project-card"><h3>Maintenance App</h3><p>Web application with Gemini API integration and COCOMO II-based maintenance cost estimation.</p><a class="project-link" href="https://github.com/areej0345/maintenance-app" target="_blank" rel="noopener">View on GitHub ↗</a></div>
-
-<div class="project-card"><h3>Library Manager</h3><p>Library management application developed using C++ and CMake.</p><a class="project-link" href="https://github.com/areej0345/LibraryManager" target="_blank" rel="noopener">View on GitHub ↗</a></div>
-
-<div class="project-card"><h3>Responsive Landing Page</h3><p>Responsive frontend web development project.</p><a class="project-link" href="https://github.com/areej0345/Responsive-Landing-Page" target="_blank" rel="noopener">View on GitHub ↗</a></div>
-
-<div class="project-card"><h3>Maintenance Cost Portal</h3><p>Software maintenance cost estimation portal.</p><a class="project-link" href="https://github.com/areej0345/maintenance-cost-portal" target="_blank" rel="noopener">View on GitHub ↗</a></div>
-
-<div class="project-card"><h3>Dynamic Content</h3><p>Web project involving dynamic content.</p><a class="project-link" href="https://github.com/areej0345/Dynamic-Content" target="_blank" rel="noopener">View on GitHub ↗</a></div>
-
-<div class="project-card"><h3>Employee Record System</h3><p>Employee record management project.</p><a class="project-link" href="https://github.com/areej0345/EmployeeRecordSystem" target="_blank" rel="noopener">View on GitHub ↗</a></div>
-
-<div class="project-card"><h3>OCR Project</h3><p>Optical character recognition project.</p><a class="project-link" href="https://github.com/areej0345/ocr_project" target="_blank" rel="noopener">View on GitHub ↗</a></div>
-
-<div class="project-card"><h3>Algorithm Project</h3><p>Programming project focused on algorithms.</p><a class="project-link" href="https://github.com/areej0345/AlgorithmProject" target="_blank" rel="noopener">View on GitHub ↗</a></div>
-
-<div class="project-card"><h3>Data Structures Project</h3><p>Project based on data structures concepts.</p><a class="project-link" href="https://github.com/areej0345/Data-Structures-Project" target="_blank" rel="noopener">View on GitHub ↗</a></div>
-
-<div class="project-card"><h3>My Calculator</h3><p>Calculator application project.</p><a class="project-link" href="https://github.com/areej0345/my_calculator" target="_blank" rel="noopener">View on GitHub ↗</a></div>
-
-<div class="project-card"><h3>ATM Project</h3><p>ATM simulation project.</p><a class="project-link" href="https://github.com/areej0345/ATMProject" target="_blank" rel="noopener">View on GitHub ↗</a></div>
-
-<div class="project-card"><h3>Airline Management System</h3><p>Airline management system project.</p><a class="project-link" href="https://github.com/areej0345/airline-management-system" target="_blank" rel="noopener">View on GitHub ↗</a></div>
-
+<div class="project-card"><h3>Live Session Toolkit</h3><p>Full-stack session toolkit with Streamlit frontend, FastAPI backend and MySQL database.</p><a class="project-link" href="https://github.com/UzmaAli/the-live-session-toolkit" target="_blank">View on GitHub ↗</a></div>
+<div class="project-card"><h3>GestureX – Hand Gesture Recognition</h3><p>Hand tracking and gesture recognition using OpenCV and MediaPipe.</p><a class="project-link" href="https://github.com/areej0345/GestureX" target="_blank">View on GitHub ↗</a></div>
+<div class="project-card"><h3>Face Emotion Detection</h3><p>Facial emotion classification using a CNN model with TensorFlow, Keras and OpenCV.</p><a class="project-link" href="https://github.com/areej0345/face_emotion_project" target="_blank">View on GitHub ↗</a></div>
+<div class="project-card"><h3>Student Registration System</h3><p>Java application using MySQL database management.</p><a class="project-link" href="https://github.com/areej0345/studentregidtrationsystem" target="_blank">View on GitHub ↗</a></div>
+<div class="project-card"><h3>Maintenance App</h3><p>Web application with Gemini API integration and COCOMO II-based maintenance cost estimation.</p><a class="project-link" href="https://github.com/areej0345/maintenance-app" target="_blank">View on GitHub ↗</a></div>
+<div class="project-card"><h3>Library Manager</h3><p>Library management application developed using C++ and CMake.</p><a class="project-link" href="https://github.com/areej0345/LibraryManager" target="_blank">View on GitHub ↗</a></div>
+<div class="project-card"><h3>Responsive Landing Page</h3><p>Responsive frontend web development project.</p><a class="project-link" href="https://github.com/areej0345/Responsive-Landing-Page" target="_blank">View on GitHub ↗</a></div>
+<div class="project-card"><h3>Maintenance Cost Portal</h3><p>Software maintenance cost estimation portal.</p><a class="project-link" href="https://github.com/areej0345/maintenance-cost-portal" target="_blank">View on GitHub ↗</a></div>
+<div class="project-card"><h3>Dynamic Content</h3><p>Web project involving dynamic content.</p><a class="project-link" href="https://github.com/areej0345/Dynamic-Content" target="_blank">View on GitHub ↗</a></div>
+<div class="project-card"><h3>Employee Record System</h3><p>Employee record management project.</p><a class="project-link" href="https://github.com/areej0345/EmployeeRecordSystem" target="_blank">View on GitHub ↗</a></div>
+<div class="project-card"><h3>OCR Project</h3><p>Optical character recognition project.</p><a class="project-link" href="https://github.com/areej0345/ocr_project" target="_blank">View on GitHub ↗</a></div>
+<div class="project-card"><h3>Algorithm Project</h3><p>Programming project focused on algorithms.</p><a class="project-link" href="https://github.com/areej0345/AlgorithmProject" target="_blank">View on GitHub ↗</a></div>
+<div class="project-card"><h3>Data Structures Project</h3><p>Project based on data structures concepts.</p><a class="project-link" href="https://github.com/areej0345/Data-Structures-Project" target="_blank">View on GitHub ↗</a></div>
+<div class="project-card"><h3>My Calculator</h3><p>Calculator application project.</p><a class="project-link" href="https://github.com/areej0345/my_calculator" target="_blank">View on GitHub ↗</a></div>
+<div class="project-card"><h3>ATM Project</h3><p>ATM simulation project.</p><a class="project-link" href="https://github.com/areej0345/ATMProject" target="_blank">View on GitHub ↗</a></div>
+<div class="project-card"><h3>Airline Management System</h3><p>Airline management system project.</p><a class="project-link" href="https://github.com/areej0345/airline-management-system" target="_blank">View on GitHub ↗</a></div>
 </div>
 </div>
 </section>
@@ -261,24 +243,15 @@ footer {border-top:1px solid var(--border);text-align:center;padding:25px 10px;c
 <div class="container">
 <div class="section-heading">
 <h2>My <span class="accent">Certificates</span></h2>
-<p>Professional training, courses and learning achievements.</p>
+<p>Professional training and course achievements.</p>
 </div>
 <div class="certificates-grid">
-
-<div class="certificate-card">
-<h3>Certificate of Appreciation</h3>
-<p>Alkhidmat Foundation Karachi · Summer Social Internship Program 2026</p>
-<div class="certificate-actions">
-<a href="alkhidmat%20foundation%20internship%20certificate%20.pdf" target="_blank" rel="noopener">View Certificate ↗</a>
-<a href="alkhidmat%20foundation%20internship%20certificate%20.pdf" download>Download PDF ↓</a>
-</div>
-</div>
 
 <div class="certificate-card">
 <h3>Freelancing</h3>
 <p>DigiSkills Training Program · DSTP 3.0 Batch 04</p>
 <div class="certificate-actions">
-<a href="freelancing%20certificate.pdf" target="_blank" rel="noopener">View PDF ↗</a>
+<a href="freelancing%20certificate.pdf" target="_blank">View PDF ↗</a>
 <a href="freelancing%20certificate.pdf" download>Download PDF ↓</a>
 </div>
 </div>
@@ -287,7 +260,7 @@ footer {border-top:1px solid var(--border);text-align:center;padding:25px 10px;c
 <h3>Artificial Intelligence Using Python</h3>
 <p>DigiSkills Training Program · DSTP 3.0 Batch 04</p>
 <div class="certificate-actions">
-<a href="AI%20using%20Python%20certificate%20.pdf" target="_blank" rel="noopener">View PDF ↗</a>
+<a href="AI%20using%20Python%20certificate%20.pdf" target="_blank">View PDF ↗</a>
 <a href="AI%20using%20Python%20certificate%20.pdf" download>Download PDF ↓</a>
 </div>
 </div>
@@ -296,7 +269,7 @@ footer {border-top:1px solid var(--border);text-align:center;padding:25px 10px;c
 <h3>Generative & Agentic AI Application Developer</h3>
 <p>Pak Angels · Cohort 11</p>
 <div class="certificate-actions">
-<a href="https://aspirepk.org/hub/certificate/158dff97-6e09-4d61-a78b-edea15ac6b4f/" target="_blank" rel="noopener">Verify Certificate ↗</a>
+<a href="https://aspirepk.org/hub/certificate/158dff97-6e09-4d61-a78b-edea15ac6b4f/" target="_blank">Verify Certificate ↗</a>
 </div>
 </div>
 
@@ -304,7 +277,7 @@ footer {border-top:1px solid var(--border);text-align:center;padding:25px 10px;c
 <h3>Marine Robotics Workshop</h3>
 <p>Participation Certificate · BRobot · 12 September 2026</p>
 <div class="certificate-actions">
-<a href="certificate%20marine%20robotic%20(workshop).png" target="_blank" rel="noopener">View Certificate ↗</a>
+<a href="certificate%20marine%20robotic%20(workshop).png" target="_blank">View Certificate ↗</a>
 <a href="certificate%20marine%20robotic%20(workshop).png" download>Download Certificate ↓</a>
 </div>
 </div>
@@ -313,7 +286,7 @@ footer {border-top:1px solid var(--border);text-align:center;padding:25px 10px;c
 <h3>Elements of AI</h3>
 <p>University of Helsinki & MinnaLearn</p>
 <div class="certificate-actions">
-<a href="https://lnkd.in/p/dknXYera" target="_blank" rel="noopener">View LinkedIn Post ↗</a>
+<a href="https://lnkd.in/p/dknXYera" target="_blank">View LinkedIn Post ↗</a>
 </div>
 </div>
 
@@ -321,7 +294,7 @@ footer {border-top:1px solid var(--border);text-align:center;padding:25px 10px;c
 <h3>Google Ads</h3>
 <p>Course Certificate</p>
 <div class="certificate-actions">
-<a href="cert_google_ads.pdf" target="_blank" rel="noopener">View PDF ↗</a>
+<a href="cert_google_ads.pdf" target="_blank">View PDF ↗</a>
 <a href="cert_google_ads.pdf" download>Download PDF ↓</a>
 </div>
 </div>
@@ -330,7 +303,7 @@ footer {border-top:1px solid var(--border);text-align:center;padding:25px 10px;c
 <h3>Canva Design</h3>
 <p>Course Certificate</p>
 <div class="certificate-actions">
-<a href="cert_canva.pdf" target="_blank" rel="noopener">View PDF ↗</a>
+<a href="cert_canva.pdf" target="_blank">View PDF ↗</a>
 <a href="cert_canva.pdf" download>Download PDF ↓</a>
 </div>
 </div>
@@ -339,7 +312,7 @@ footer {border-top:1px solid var(--border);text-align:center;padding:25px 10px;c
 <h3>Microsoft Excel</h3>
 <p>Course Certificate</p>
 <div class="certificate-actions">
-<a href="cert_excel.pdf" target="_blank" rel="noopener">View PDF ↗</a>
+<a href="cert_excel.pdf" target="_blank">View PDF ↗</a>
 <a href="cert_excel.pdf" download>Download PDF ↓</a>
 </div>
 </div>
@@ -348,7 +321,7 @@ footer {border-top:1px solid var(--border);text-align:center;padding:25px 10px;c
 <h3>HTML & CSS</h3>
 <p>Course Certificate</p>
 <div class="certificate-actions">
-<a href="cert_html_css.pdf" target="_blank" rel="noopener">View PDF ↗</a>
+<a href="cert_html_css.pdf" target="_blank">View PDF ↗</a>
 <a href="cert_html_css.pdf" download>Download PDF ↓</a>
 </div>
 </div>
@@ -357,16 +330,16 @@ footer {border-top:1px solid var(--border);text-align:center;padding:25px 10px;c
 <h3>WordPress</h3>
 <p>Course Certificate</p>
 <div class="certificate-actions">
-<a href="cert_wordpress.pdf" target="_blank" rel="noopener">View PDF ↗</a>
+<a href="cert_wordpress.pdf" target="_blank">View PDF ↗</a>
 <a href="cert_wordpress.pdf" download>Download PDF ↓</a>
 </div>
 </div>
 
 <div class="certificate-card">
-<h3>Alison Certificate</h3>
+<h3>Alison Course Certificate</h3>
 <p>Online Course Certificate</p>
 <div class="certificate-actions">
-<a href="https://alison.com/verify/a4a4ee0654" target="_blank" rel="noopener">Verify Certificate ↗</a>
+<a href="https://alison.com/verify/a4a4ee0654" target="_blank">Verify Certificate ↗</a>
 </div>
 </div>
 
@@ -416,8 +389,8 @@ footer {border-top:1px solid var(--border);text-align:center;padding:25px 10px;c
 <p>I'm interested in General IT opportunities, learning new technologies and collaborating on meaningful projects.</p>
 <div class="contact-links">
 <a class="btn btn-primary" href="mailto:areejalimustafa1@gmail.com">Email Me</a>
-<a class="btn btn-outline" href="https://github.com/areej0345" target="_blank" rel="noopener">GitHub</a>
-<a class="btn btn-outline" href="https://linkedin.com/in/areej-ali-558b39295" target="_blank" rel="noopener">LinkedIn</a>
+<a class="btn btn-outline" href="https://github.com/areej0345" target="_blank">GitHub</a>
+<a class="btn btn-outline" href="https://linkedin.com/in/areej-ali-558b39295" target="_blank">LinkedIn</a>
 </div>
 </div>
 </div>
@@ -426,21 +399,14 @@ footer {border-top:1px solid var(--border);text-align:center;padding:25px 10px;c
 
 <footer>
 <p>© 2026 Areej Ali Mustafa. All Rights Reserved.</p>
-<p>Designed and developed with care.</p>
 </footer>
 
 <script>
-const menuBtn = document.getElementById("menuBtn");
-const navLinks = document.getElementById("navLinks");
-
-menuBtn.addEventListener("click", () => {
-  navLinks.classList.toggle("active");
-});
-
-document.querySelectorAll(".nav-links a").forEach(link => {
-  link.addEventListener("click", () => {
-    navLinks.classList.remove("active");
-  });
+const menuBtn=document.getElementById("menuBtn");
+const navLinks=document.getElementById("navLinks");
+menuBtn.addEventListener("click",()=>navLinks.classList.toggle("active"));
+document.querySelectorAll(".nav-links a").forEach(link=>{
+  link.addEventListener("click",()=>navLinks.classList.remove("active"));
 });
 </script>
 </body>
