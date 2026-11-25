@@ -4,11 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Areej Ali Mustafa - Computer Science Student and Developer">
+  <meta name="description" content="Areej Ali Mustafa - BS Computer Science Student Portfolio">
   <title>Areej Ali Mustafa | Portfolio</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
@@ -51,7 +50,7 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(11,16,32,.94);
+      background: rgba(11,16,32,.95);
       backdrop-filter: blur(15px);
       border-bottom: 1px solid var(--border);
     }
@@ -77,7 +76,7 @@
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 22px;
+      gap: 20px;
       list-style: none;
     }
 
@@ -125,8 +124,6 @@
     .accent {
       color: var(--accent2);
     }
-
-    /* HERO */
 
     .hero {
       min-height: 620px;
@@ -212,8 +209,6 @@
       color: var(--accent);
     }
 
-    /* GENERAL CARDS */
-
     .about-content {
       display: grid;
       grid-template-columns: 1.2fr .8fr;
@@ -263,8 +258,6 @@
       font-size: 14px;
     }
 
-    /* SKILLS */
-
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -305,8 +298,6 @@
       font-size: 12px;
     }
 
-    /* EXPERIENCE */
-
     .experience-card {
       max-width: 820px;
       margin: auto;
@@ -343,8 +334,6 @@
       margin-top: 12px;
     }
 
-    /* PROJECTS */
-
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -380,8 +369,6 @@
       color: var(--accent);
     }
 
-    /* CERTIFICATES */
-
     .certificates-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -416,8 +403,6 @@
       color: var(--accent);
     }
 
-    /* ADDITIONAL */
-
     .extra-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -428,8 +413,6 @@
       color: var(--accent2);
       margin-bottom: 16px;
     }
-
-    /* CONTACT */
 
     .contact-box {
       max-width: 720px;
@@ -516,550 +499,501 @@
 
 <body>
 
-  <!-- NAVIGATION -->
-  <header>
+<header>
+  <div class="container">
+    <nav>
+      <a href="#home" class="logo">Areej<span>.</span></a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Internship</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#certificates">Certificates</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero" id="home">
     <div class="container">
-      <nav>
-        <a href="#home" class="logo">Areej<span>.</span></a>
+      <div class="hero-content">
+        <span class="eyebrow">BS Computer Science Student · DUET</span>
+        <h1>Hello, I'm <span>Areej Ali Mustafa</span></h1>
+        <h3>Computer Science Student | IT Enthusiast</h3>
 
-        <button class="menu-btn" id="menuBtn" aria-label="Open navigation menu">☰</button>
+        <p>
+          BS Computer Science student at Dawood University of Engineering
+          and Technology, with hands-on experience through an IT internship
+          and academic projects. Interested in General IT, Python,
+          web technologies, databases and application development.
+        </p>
 
-        <ul class="nav-links" id="navLinks">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#experience">Internship</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#certificates">Certificates</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
+        <div class="buttons">
+          <a href="#projects" class="btn btn-primary">Explore Projects</a>
+          <a href="Areej_Ali_Mustafa_Resume1.pdf"
+             class="btn btn-outline" target="_blank" rel="noopener">View Resume</a>
+          <a href="Areej_Ali_Mustafa_Resume1.pdf"
+             class="btn btn-primary" download>Download Resume ↓</a>
+        </div>
+      </div>
     </div>
-  </header>
+  </section>
 
-  <main>
+  <section id="about">
+    <div class="container">
+      <div class="section-heading">
+        <h2>About <span class="accent">Me</span></h2>
+        <p>A little introduction about me and my journey.</p>
+      </div>
 
-    <!-- HOME -->
-    <section class="hero" id="home">
-      <div class="container">
-        <div class="hero-content">
-
-          <span class="eyebrow">BS Computer Science Student · DUET</span>
-
-          <h1>Hello, I'm <span>Areej Ali Mustafa</span></h1>
-
-          <h3>Computer Science Student | IT Enthusiast</h3>
-
+      <div class="about-content">
+        <div class="about-text">
           <p>
-            BS Computer Science student at Dawood University of Engineering
-            and Technology, with hands-on experience through an IT internship
-            and academic projects. Interested in General IT opportunities,
-            Python, web technologies, databases and application development.
+            I am Areej Ali Mustafa, a BS Computer Science student at
+            Dawood University of Engineering and Technology.
           </p>
-
-          <div class="buttons">
-            <a href="#projects" class="btn btn-primary">Explore Projects</a>
-
-            <a href="Areej_Ali_Mustafa_Resume1.pdf"
-               class="btn btn-outline"
-               target="_blank"
-               rel="noopener">
-              View Resume
-            </a>
-
-            <a href="Areej_Ali_Mustafa_Resume1.pdf"
-               class="btn btn-primary"
-               download>
-              Download Resume ↓
-            </a>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about">
-      <div class="container">
-
-        <div class="section-heading">
-          <h2>About <span class="accent">Me</span></h2>
-          <p>A little introduction about me and my journey.</p>
-        </div>
-
-        <div class="about-content">
-
-          <div class="about-text">
-            <p>
-              I am Areej Ali Mustafa, a BS Computer Science student at
-              Dawood University of Engineering and Technology.
-            </p>
-
-            <p>
-              I have hands-on experience through an IT internship and
-              academic projects. My interests include General IT,
-              software development, web technologies, databases and
-              artificial intelligence.
-            </p>
-
-            <p>
-              I enjoy learning new technologies, solving problems and
-              applying programming concepts through practical projects.
-              I aim to continue improving my technical skills and gaining
-              professional experience.
-            </p>
-          </div>
-
-          <div class="info-card">
-            <h3>Education</h3>
-
-            <div class="info-item">
-              <strong>University</strong>
-              <span>Dawood University of Engineering & Technology</span>
-            </div>
-
-            <div class="info-item">
-              <strong>Degree</strong>
-              <span>BS Computer Science</span>
-            </div>
-
-            <div class="info-item">
-              <strong>Expected Graduation</strong>
-              <span>2028</span>
-            </div>
-
-            <div class="info-item">
-              <strong>Intermediate</strong>
-              <span>Aga Khan Higher Secondary School — Pre-Medical</span>
-            </div>
-
-            <div class="info-item">
-              <strong>Matriculation</strong>
-              <span>Sultan Mahomed Shah Aga Khan School — Pre-Medical</span>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- SKILLS -->
-    <section id="skills">
-      <div class="container">
-
-        <div class="section-heading">
-          <h2>Technical <span class="accent">Skills</span></h2>
-          <p>Technologies and tools I have worked with.</p>
-        </div>
-
-        <div class="skills-grid">
-
-          <div class="skill-card">
-            <h3>Programming & Web</h3>
-            <div class="tags">
-              <span class="tag">Python</span>
-              <span class="tag">C++</span>
-              <span class="tag">Java</span>
-              <span class="tag">JavaScript</span>
-              <span class="tag">HTML5</span>
-              <span class="tag">CSS3</span>
-            </div>
-          </div>
-
-          <div class="skill-card">
-            <h3>Databases</h3>
-            <div class="tags">
-              <span class="tag">MySQL (Basic)</span>
-              <span class="tag">MongoDB (Basic)</span>
-              <span class="tag">SQL</span>
-            </div>
-          </div>
-
-          <div class="skill-card">
-            <h3>Frameworks & Tools</h3>
-            <div class="tags">
-              <span class="tag">FastAPI</span>
-              <span class="tag">Streamlit</span>
-              <span class="tag">TensorFlow</span>
-              <span class="tag">Keras</span>
-              <span class="tag">OpenCV</span>
-              <span class="tag">MediaPipe</span>
-              <span class="tag">NumPy</span>
-              <span class="tag">Plotly</span>
-              <span class="tag">Git</span>
-              <span class="tag">GitHub</span>
-              <span class="tag">VS Code</span>
-            </div>
-          </div>
-
-          <div class="skill-card">
-            <h3>Technical Concepts</h3>
-            <div class="tags">
-              <span class="tag">OOP</span>
-              <span class="tag">CNN-based Emotion Classification</span>
-              <span class="tag">REST API Integration</span>
-              <span class="tag">Responsive Web Design</span>
-            </div>
-          </div>
-
-          <div class="skill-card">
-            <h3>AI & Computer Vision</h3>
-            <div class="tags">
-              <span class="tag">CNN</span>
-              <span class="tag">Image Processing</span>
-              <span class="tag">Face Detection</span>
-              <span class="tag">Hand Tracking</span>
-            </div>
-          </div>
-
-          <div class="skill-card">
-            <h3>Development Tools</h3>
-            <div class="tags">
-              <span class="tag">Pygame</span>
-              <span class="tag">Pydantic</span>
-              <span class="tag">Railway</span>
-              <span class="tag">Streamlit Community Cloud</span>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- INTERNSHIP -->
-    <section id="experience">
-      <div class="container">
-
-        <div class="section-heading">
-          <h2>Internship <span class="accent">Experience</span></h2>
-          <p>My professional learning experience.</p>
-        </div>
-
-        <div class="experience-card">
-          <h3>IT Intern</h3>
-          <div class="company">Alkhidmat Foundation</div>
-          <div class="date">25 July 2026 – 18 September 2026</div>
-
-          <ul>
-            <li>Contributed to the Live Session Toolkit internship project.</li>
-            <li>Worked with Python, Streamlit, FastAPI, MySQL, Pydantic and Plotly.</li>
-            <li>Used QR code generation and python-dotenv.</li>
-            <li>Worked with Git and GitHub.</li>
-            <li>Worked with Railway and Streamlit Community Cloud deployment.</li>
-          </ul>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- PROJECTS -->
-    <section id="projects">
-      <div class="container">
-
-        <div class="section-heading">
-          <h2>My <span class="accent">Projects</span></h2>
-          <p>Academic and personal projects.</p>
-        </div>
-
-        <div class="projects-grid">
-
-          <div class="project-card">
-            <h3>Live Session Toolkit</h3>
-            <p>Full-stack session toolkit with Streamlit frontend, FastAPI backend and MySQL database.</p>
-            <a class="project-link" href="https://github.com/UzmaAli/the-live-session-toolkit" target="_blank" rel="noopener">View on GitHub ↗</a>
-          </div>
-
-          <div class="project-card">
-            <h3>GestureX – Hand Gesture Recognition</h3>
-            <p>Hand tracking and gesture recognition using OpenCV and MediaPipe, with Pygame functionality.</p>
-            <a class="project-link" href="https://github.com/areej0345/GestureX" target="_blank" rel="noopener">View on GitHub ↗</a>
-          </div>
-
-          <div class="project-card">
-            <h3>Face Emotion Detection</h3>
-            <p>Facial emotion classification using a CNN model with TensorFlow, Keras and OpenCV.</p>
-            <a class="project-link" href="https://github.com/areej0345/face_emotion_project" target="_blank" rel="noopener">View on GitHub ↗</a>
-          </div>
-
-          <div class="project-card">
-            <h3>Student Registration System</h3>
-            <p>Java application using MySQL database management and SQL queries.</p>
-            <a class="project-link" href="https://github.com/areej0345/studentregidtrationsystem" target="_blank" rel="noopener">View on GitHub ↗</a>
-          </div>
-
-          <div class="project-card">
-            <h3>Maintenance App</h3>
-            <p>Web application with Gemini API integration and COCOMO II-based maintenance cost estimation.</p>
-            <a class="project-link" href="https://github.com/areej0345/maintenance-app" target="_blank" rel="noopener">View on GitHub ↗</a>
-          </div>
-
-          <div class="project-card">
-            <h3>Library Manager</h3>
-            <p>Library management application developed using C++ and CMake.</p>
-            <a class="project-link" href="https://github.com/areej0345/LibraryManager" target="_blank" rel="noopener">View on GitHub ↗</a>
-          </div>
-
-          <div class="project-card">
-            <h3>Responsive Landing Page</h3>
-            <p>Responsive frontend web development project.</p>
-            <a class="project-link" href="https://github.com/areej0345/Responsive-Landing-Page" target="_blank" rel="noopener">View on GitHub ↗</a>
-          </div>
-
-          <div class="project-card">
-            <h3>Maintenance Cost Portal</h3>
-            <p>Software maintenance cost estimation portal.</p>
-            <a class="project-link" href="https://github.com/areej0345/maintenance-cost-portal" target="_blank" rel="noopener">View on GitHub ↗</a>
-          </div>
-
-          <div class="project-card">
-            <h3>Dynamic Content</h3>
-            <p>Web project involving dynamic content.</p>
-            <a class="project-link" href="https://github.com/areej0345/Dynamic-Content" target="_blank" rel="noopener">View on GitHub ↗</a>
-          </div>
-
-          <div class="project-card">
-            <h3>Employee Record System</h3>
-            <p>Employee record management project.</p>
-            <a class="project-link" href="https://github.com/areej0345/EmployeeRecordSystem" target="_blank" rel="noopener">View on GitHub ↗</a>
-          </div>
-
-          <div class="project-card">
-            <h3>OCR Project</h3>
-            <p>Optical character recognition project.</p>
-            <a class="project-link" href="https://github.com/areej0345/ocr_project" target="_blank" rel="noopener">View on GitHub ↗</a>
-          </div>
-
-          <div class="project-card">
-            <h3>Algorithm Project</h3>
-            <p>Programming project focused on algorithms.</p>
-            <a class="project-link" href="https://github.com/areej0345/AlgorithmProject" target="_blank" rel="noopener">View on GitHub ↗</a>
-          </div>
-
-          <div class="project-card">
-            <h3>Data Structures Project</h3>
-            <p>Project based on data structures concepts.</p>
-            <a class="project-link" href="https://github.com/areej0345/Data-Structures-Project" target="_blank" rel="noopener">View on GitHub ↗</a>
-          </div>
-
-          <div class="project-card">
-            <h3>My Calculator</h3>
-            <p>Calculator application project.</p>
-            <a class="project-link" href="https://github.com/areej0345/my_calculator" target="_blank" rel="noopener">View on GitHub ↗</a>
-          </div>
-
-          <div class="project-card">
-            <h3>ATM Project</h3>
-            <p>ATM simulation project.</p>
-            <a class="project-link" href="https://github.com/areej0345/ATMProject" target="_blank" rel="noopener">View on GitHub ↗</a>
-          </div>
-
-          <div class="project-card">
-            <h3>Airline Management System</h3>
-            <p>Airline management system project.</p>
-            <a class="project-link" href="https://github.com/areej0345/airline-management-system" target="_blank" rel="noopener">View on GitHub ↗</a>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- CERTIFICATES -->
-    <section id="certificates">
-      <div class="container">
-
-        <div class="section-heading">
-          <h2>My <span class="accent">Certificates</span></h2>
-          <p>Professional training, courses and learning achievements.</p>
-        </div>
-
-        <div class="certificates-grid">
-
-          <div class="certificate-card">
-            <h3>Generative & Agentic AI Application Developer</h3>
-            <p>Pak Angels · Cohort 11 · August–October 2026</p>
-            <div class="certificate-actions">
-              <a href="https://aspirepk.org/hub/certificate/158dff97-6e09-4d61-a78b-edea15ac6b4f/" target="_blank" rel="noopener">Verify Certificate ↗</a>
-            </div>
-          </div>
-
-          <div class="certificate-card">
-            <h3>Freelancing</h3>
-            <p>DigiSkills Training Program · DSTP 3.0 Batch 04 · August–October 2026</p>
-            <div class="certificate-actions">
-              <a href="Freelancing-DigiSkills-Certificate.pdf" target="_blank" rel="noopener">View PDF ↗</a>
-              <a href="Freelancing-DigiSkills-Certificate.pdf" download>Download PDF ↓</a>
-              <a href="https://digiskills.pk/verify" target="_blank" rel="noopener">Verify Online ↗</a>
-            </div>
-          </div>
-
-          <div class="certificate-card">
-            <h3>Artificial Intelligence Using Python</h3>
-            <p>DigiSkills Training Program · DSTP 3.0 Batch 04 · August–October 2026</p>
-            <div class="certificate-actions">
-              <a href="Artificial-Intelligence-Using-Python-DigiSkills-Certificate.pdf" target="_blank" rel="noopener">View PDF ↗</a>
-              <a href="Artificial-Intelligence-Using-Python-DigiSkills-Certificate.pdf" download>Download PDF ↓</a>
-              <a href="https://digiskills.pk/verify" target="_blank" rel="noopener">Verify Online ↗</a>
-            </div>
-          </div>
-
-          <div class="certificate-card">
-            <h3>Elements of AI</h3>
-            <p>University of Helsinki & MinnaLearn</p>
-          </div>
-
-          <div class="certificate-card">
-            <h3>Getting Started in Google Analytics</h3>
-            <p>Coursera</p>
-            <div class="certificate-actions">
-              <a href="https://www.coursera.org/account/accomplishments/records/679W48I973SD" target="_blank" rel="noopener">View Certificate ↗</a>
-            </div>
-          </div>
-
-          <div class="certificate-card">
-            <h3>Getting Started with Microsoft Excel</h3>
-            <p>Coursera</p>
-            <div class="certificate-actions">
-              <a href="https://www.coursera.org/account/accomplishments/records/ZI5QVWZ4OMAA" target="_blank" rel="noopener">View Certificate ↗</a>
-            </div>
-          </div>
-
-          <div class="certificate-card">
-            <h3>Use Canva to Design Digital Course Collateral</h3>
-            <p>Coursera</p>
-            <div class="certificate-actions">
-              <a href="https://www.coursera.org/account/accomplishments/verify/2LT06LW9RR3X" target="_blank" rel="noopener">View Certificate ↗</a>
-            </div>
-          </div>
-
-          <div class="certificate-card">
-            <h3>Additional Coursera Certificate</h3>
-            <p>Course title needs confirmation</p>
-            <div class="certificate-actions">
-              <a href="https://www.coursera.org/account/accomplishments/verify/7GE2Z8TU8CW8" target="_blank" rel="noopener">View Certificate ↗</a>
-            </div>
-          </div>
-
-          <div class="certificate-card">
-            <h3>Additional Coursera Certificate</h3>
-            <p>Course title needs confirmation</p>
-            <div class="certificate-actions">
-              <a href="https://www.coursera.org/account/accomplishments/records/Y1YBVKTEB39W" target="_blank" rel="noopener">View Certificate ↗</a>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ADDITIONAL INFORMATION -->
-    <section id="additional">
-      <div class="container">
-
-        <div class="section-heading">
-          <h2>Additional <span class="accent">Information</span></h2>
-          <p>Soft skills, languages and workshops.</p>
-        </div>
-
-        <div class="extra-grid">
-
-          <div class="extra-card">
-            <h3>Soft Skills</h3>
-            <div class="tags">
-              <span class="tag">Problem Solving</span>
-              <span class="tag">Teamwork & Collaboration</span>
-              <span class="tag">Communication</span>
-              <span class="tag">Time Management</span>
-              <span class="tag">Critical Thinking</span>
-              <span class="tag">Adaptability</span>
-              <span class="tag">Quick Learning</span>
-            </div>
-          </div>
-
-          <div class="extra-card">
-            <h3>Languages</h3>
-            <div class="tags">
-              <span class="tag">English — Good</span>
-              <span class="tag">Urdu — Good</span>
-              <span class="tag">Sindhi — Basic</span>
-            </div>
-          </div>
-
-          <div class="extra-card">
-            <h3>Workshop</h3>
-            <div class="tags">
-              <span class="tag">Marine Robotics Workshop</span>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact">
-      <div class="container">
-
-        <div class="section-heading">
-          <h2>Get In <span class="accent">Touch</span></h2>
-          <p>Let's connect and explore opportunities.</p>
-        </div>
-
-        <div class="contact-box">
-          <h3>Thank you for visiting my portfolio!</h3>
-
           <p>
-            I'm interested in General IT opportunities, learning new
-            technologies and collaborating on meaningful projects.
+            I have hands-on experience through an IT internship and
+            academic projects. My interests include General IT,
+            software development, web technologies, databases and
+            artificial intelligence.
           </p>
+          <p>
+            I enjoy learning new technologies, solving problems and
+            applying programming concepts through practical projects.
+            I aim to continue improving my technical skills and gaining
+            professional experience.
+          </p>
+        </div>
 
-          <div class="contact-links">
-            <a class="btn btn-primary"
-               href="mailto:areejalimustafa1@gmail.com">
-              Email Me
-            </a>
+        <div class="info-card">
+          <h3>Education</h3>
+          <div class="info-item">
+            <strong>University</strong>
+            <span>Dawood University of Engineering & Technology</span>
+          </div>
+          <div class="info-item">
+            <strong>Degree</strong>
+            <span>BS Computer Science</span>
+          </div>
+          <div class="info-item">
+            <strong>Expected Graduation</strong>
+            <span>2028</span>
+          </div>
+          <div class="info-item">
+            <strong>Intermediate</strong>
+            <span>Aga Khan Higher Secondary School — Pre-Medical</span>
+          </div>
+          <div class="info-item">
+            <strong>Matriculation</strong>
+            <span>Sultan Mahomed Shah Aga Khan School — Pre-Medical</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-            <a class="btn btn-outline"
-               href="https://github.com/areej0345"
-               target="_blank"
-               rel="noopener">
-              GitHub
-            </a>
+  <section id="skills">
+    <div class="container">
+      <div class="section-heading">
+        <h2>Technical <span class="accent">Skills</span></h2>
+        <p>Technologies and tools I have worked with.</p>
+      </div>
 
-            <a class="btn btn-outline"
-               href="https://linkedin.com/in/areej-ali-558b39295"
-               target="_blank"
-               rel="noopener">
-              LinkedIn
-            </a>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <h3>Programming & Web</h3>
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">C++</span>
+            <span class="tag">Java</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">HTML5</span>
+            <span class="tag">CSS3</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h3>Databases</h3>
+          <div class="tags">
+            <span class="tag">MySQL</span>
+            <span class="tag">MongoDB</span>
+            <span class="tag">SQL</span>
+            <span class="tag">JDBC</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h3>Frameworks & Tools</h3>
+          <div class="tags">
+            <span class="tag">FastAPI</span>
+            <span class="tag">Streamlit</span>
+            <span class="tag">TensorFlow</span>
+            <span class="tag">Keras</span>
+            <span class="tag">OpenCV</span>
+            <span class="tag">MediaPipe</span>
+            <span class="tag">NumPy</span>
+            <span class="tag">Plotly</span>
+            <span class="tag">Git</span>
+            <span class="tag">GitHub</span>
+            <span class="tag">VS Code</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h3>Technical Concepts</h3>
+          <div class="tags">
+            <span class="tag">OOP</span>
+            <span class="tag">REST API Integration</span>
+            <span class="tag">Responsive Web Design</span>
+            <span class="tag">Image Processing</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h3>AI & Computer Vision</h3>
+          <div class="tags">
+            <span class="tag">CNN</span>
+            <span class="tag">Face Detection</span>
+            <span class="tag">Hand Tracking</span>
+            <span class="tag">Image Processing</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h3>Development Tools</h3>
+          <div class="tags">
+            <span class="tag">Pygame</span>
+            <span class="tag">Pydantic</span>
+            <span class="tag">Railway</span>
+            <span class="tag">Streamlit Community Cloud</span>
+            <span class="tag">CMake</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="container">
+      <div class="section-heading">
+        <h2>Internship <span class="accent">Experience</span></h2>
+        <p>My professional learning experience.</p>
+      </div>
+
+      <div class="experience-card">
+        <h3>IT Intern</h3>
+        <div class="company">Alkhidmat Foundation</div>
+        <div class="date">25 July 2026 – 18 September 2026</div>
+        <ul>
+          <li>Contributed to the Live Session Toolkit internship project.</li>
+          <li>Worked with Python, Streamlit, FastAPI, MySQL, Pydantic and Plotly.</li>
+          <li>Used QR code generation and python-dotenv.</li>
+          <li>Worked with Git and GitHub.</li>
+          <li>Worked with Railway and Streamlit Community Cloud deployment.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <div class="section-heading">
+        <h2>My <span class="accent">Projects</span></h2>
+        <p>Academic and personal projects.</p>
+      </div>
+
+      <div class="projects-grid">
+
+        <div class="project-card">
+          <h3>Live Session Toolkit</h3>
+          <p>Full-stack session toolkit with Streamlit frontend, FastAPI backend and MySQL database.</p>
+          <a class="project-link" href="https://github.com/UzmaAli/the-live-session-toolkit" target="_blank" rel="noopener">View on GitHub ↗</a>
+        </div>
+
+        <div class="project-card">
+          <h3>GestureX – Hand Gesture Recognition</h3>
+          <p>Hand tracking and gesture recognition using OpenCV and MediaPipe, with Pygame functionality.</p>
+          <a class="project-link" href="https://github.com/areej0345/GestureX" target="_blank" rel="noopener">View on GitHub ↗</a>
+        </div>
+
+        <div class="project-card">
+          <h3>Face Emotion Detection</h3>
+          <p>Facial emotion classification using a CNN model with TensorFlow, Keras and OpenCV.</p>
+          <a class="project-link" href="https://github.com/areej0345/face_emotion_project" target="_blank" rel="noopener">View on GitHub ↗</a>
+        </div>
+
+        <div class="project-card">
+          <h3>Student Registration System</h3>
+          <p>Java application using MySQL database management and SQL queries.</p>
+          <a class="project-link" href="https://github.com/areej0345/studentregidtrationsystem" target="_blank" rel="noopener">View on GitHub ↗</a>
+        </div>
+
+        <div class="project-card">
+          <h3>Maintenance App</h3>
+          <p>Web application with Gemini API integration and COCOMO II-based maintenance cost estimation.</p>
+          <a class="project-link" href="https://github.com/areej0345/maintenance-app" target="_blank" rel="noopener">View on GitHub ↗</a>
+        </div>
+
+        <div class="project-card">
+          <h3>Library Manager</h3>
+          <p>Library management application developed using C++ and CMake.</p>
+          <a class="project-link" href="https://github.com/areej0345/LibraryManager" target="_blank" rel="noopener">View on GitHub ↗</a>
+        </div>
+
+        <div class="project-card">
+          <h3>Responsive Landing Page</h3>
+          <p>Responsive frontend web development project.</p>
+          <a class="project-link" href="https://github.com/areej0345/Responsive-Landing-Page" target="_blank" rel="noopener">View on GitHub ↗</a>
+        </div>
+
+        <div class="project-card">
+          <h3>Maintenance Cost Portal</h3>
+          <p>Software maintenance cost estimation portal.</p>
+          <a class="project-link" href="https://github.com/areej0345/maintenance-cost-portal" target="_blank" rel="noopener">View on GitHub ↗</a>
+        </div>
+
+        <div class="project-card">
+          <h3>Dynamic Content</h3>
+          <p>Web project involving dynamic content.</p>
+          <a class="project-link" href="https://github.com/areej0345/Dynamic-Content" target="_blank" rel="noopener">View on GitHub ↗</a>
+        </div>
+
+        <div class="project-card">
+          <h3>Employee Record System</h3>
+          <p>Employee record management project.</p>
+          <a class="project-link" href="https://github.com/areej0345/EmployeeRecordSystem" target="_blank" rel="noopener">View on GitHub ↗</a>
+        </div>
+
+        <div class="project-card">
+          <h3>OCR Project</h3>
+          <p>Optical character recognition project.</p>
+          <a class="project-link" href="https://github.com/areej0345/ocr_project" target="_blank" rel="noopener">View on GitHub ↗</a>
+        </div>
+
+        <div class="project-card">
+          <h3>Algorithm Project</h3>
+          <p>Programming project focused on algorithms.</p>
+          <a class="project-link" href="https://github.com/areej0345/AlgorithmProject" target="_blank" rel="noopener">View on GitHub ↗</a>
+        </div>
+
+        <div class="project-card">
+          <h3>Data Structures Project</h3>
+          <p>Project based on data structures concepts.</p>
+          <a class="project-link" href="https://github.com/areej0345/Data-Structures-Project" target="_blank" rel="noopener">View on GitHub ↗</a>
+        </div>
+
+        <div class="project-card">
+          <h3>My Calculator</h3>
+          <p>Calculator application project.</p>
+          <a class="project-link" href="https://github.com/areej0345/my_calculator" target="_blank" rel="noopener">View on GitHub ↗</a>
+        </div>
+
+        <div class="project-card">
+          <h3>ATM Project</h3>
+          <p>ATM simulation project.</p>
+          <a class="project-link" href="https://github.com/areej0345/ATMProject" target="_blank" rel="noopener">View on GitHub ↗</a>
+        </div>
+
+        <div class="project-card">
+          <h3>Airline Management System</h3>
+          <p>Airline management system project.</p>
+          <a class="project-link" href="https://github.com/areej0345/airline-management-system" target="_blank" rel="noopener">View on GitHub ↗</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="certificates">
+    <div class="container">
+      <div class="section-heading">
+        <h2>My <span class="accent">Certificates</span></h2>
+        <p>Professional training, courses and learning achievements.</p>
+      </div>
+
+      <div class="certificates-grid">
+
+        <div class="certificate-card">
+          <h3>Freelancing</h3>
+          <p>DigiSkills Training Program · DSTP 3.0 Batch 04 · August–October 2026</p>
+          <div class="certificate-actions">
+            <a href="freelancing%20certificate.pdf" target="_blank" rel="noopener">View PDF ↗</a>
+            <a href="freelancing%20certificate.pdf" download>Download PDF ↓</a>
+          </div>
+        </div>
+
+        <div class="certificate-card">
+          <h3>Artificial Intelligence Using Python</h3>
+          <p>DigiSkills Training Program · DSTP 3.0 Batch 04 · August–October 2026</p>
+          <div class="certificate-actions">
+            <a href="AI%20using%20Python%20certficate%20.pdf" target="_blank" rel="noopener">View PDF ↗</a>
+            <a href="AI%20using%20Python%20certficate%20.pdf" download>Download PDF ↓</a>
+          </div>
+        </div>
+
+        <div class="certificate-card">
+          <h3>Generative & Agentic AI Application Developer</h3>
+          <p>Pak Angels · Cohort 11 · August–October 2026</p>
+          <div class="certificate-actions">
+            <a href="https://aspirepk.org/hub/certificate/158dff97-6e09-4d61-a78b-edea15ac6b4f/" target="_blank" rel="noopener">Verify Certificate ↗</a>
+          </div>
+        </div>
+
+        <div class="certificate-card">
+          <h3>Marine Robotics Workshop</h3>
+          <p>Participation Certificate · BRobot · 12 September 2026</p>
+          <div class="certificate-actions">
+            <a href="certificate%20marine%20robotic%20(workshop).png" target="_blank" rel="noopener">View Certificate ↗</a>
+            <a href="certificate%20marine%20robotic%20(workshop).png" download>Download Certificate ↓</a>
+          </div>
+        </div>
+
+        <div class="certificate-card">
+          <h3>Elements of AI</h3>
+          <p>University of Helsinki & MinnaLearn</p>
+        </div>
+
+        <div class="certificate-card">
+          <h3>Google Ads Certificate</h3>
+          <p>Online Course Certificate</p>
+          <div class="certificate-actions">
+            <a href="cert_google_ads.pdf" target="_blank" rel="noopener">View PDF ↗</a>
+            <a href="cert_google_ads.pdf" download>Download PDF ↓</a>
+          </div>
+        </div>
+
+        <div class="certificate-card">
+          <h3>Canva Design Certificate</h3>
+          <p>Online Course Certificate</p>
+          <div class="certificate-actions">
+            <a href="cert_canva.pdf" target="_blank" rel="noopener">View PDF ↗</a>
+            <a href="cert_canva.pdf" download>Download PDF ↓</a>
+          </div>
+        </div>
+
+        <div class="certificate-card">
+          <h3>Microsoft Excel Certificate</h3>
+          <p>Online Course Certificate</p>
+          <div class="certificate-actions">
+            <a href="cert_excel.pdf" target="_blank" rel="noopener">View PDF ↗</a>
+            <a href="cert_excel.pdf" download>Download PDF ↓</a>
+          </div>
+        </div>
+
+        <div class="certificate-card">
+          <h3>HTML & CSS Certificate</h3>
+          <p>Online Course Certificate</p>
+          <div class="certificate-actions">
+            <a href="cert_html_css.pdf" target="_blank" rel="noopener">View PDF ↗</a>
+            <a href="cert_html_css.pdf" download>Download PDF ↓</a>
+          </div>
+        </div>
+
+        <div class="certificate-card">
+          <h3>WordPress Certificate</h3>
+          <p>Online Course Certificate</p>
+          <div class="certificate-actions">
+            <a href="cert_wordpress.pdf" target="_blank" rel="noopener">View PDF ↗</a>
+            <a href="cert_wordpress.pdf" download>Download PDF ↓</a>
+          </div>
+        </div>
+
+        <div class="certificate-card">
+          <h3>Alison Certificate</h3>
+          <p>Online Course Certificate</p>
+          <div class="certificate-actions">
+            <a href="https://alison.com/verify/a4a4ee0654" target="_blank" rel="noopener">Verify Certificate ↗</a>
           </div>
         </div>
 
       </div>
-    </section>
+    </div>
+  </section>
 
-  </main>
+  <section id="additional">
+    <div class="container">
+      <div class="section-heading">
+        <h2>Additional <span class="accent">Information</span></h2>
+        <p>Soft skills and languages.</p>
+      </div>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2026 Areej Ali Mustafa. All Rights Reserved.</p>
-    <p>Designed and developed with care.</p>
-  </footer>
+      <div class="extra-grid">
+        <div class="extra-card">
+          <h3>Soft Skills</h3>
+          <div class="tags">
+            <span class="tag">Problem Solving</span>
+            <span class="tag">Teamwork & Collaboration</span>
+            <span class="tag">Communication</span>
+            <span class="tag">Time Management</span>
+            <span class="tag">Critical Thinking</span>
+            <span class="tag">Adaptability</span>
+            <span class="tag">Quick Learning</span>
+          </div>
+        </div>
 
-  <!-- MOBILE MENU -->
-  <script>
-    const menuBtn = document.getElementById("menuBtn");
-    const navLinks = document.getElementById("navLinks");
+        <div class="extra-card">
+          <h3>Languages</h3>
+          <div class="tags">
+            <span class="tag">English — Good</span>
+            <span class="tag">Urdu — Good</span>
+            <span class="tag">Sindhi — Basic</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    menuBtn.addEventListener("click", () => {
-      navLinks.classList.toggle("active");
+  <section id="contact">
+    <div class="container">
+      <div class="section-heading">
+        <h2>Get In <span class="accent">Touch</span></h2>
+        <p>Let's connect and explore opportunities.</p>
+      </div>
+
+      <div class="contact-box">
+        <h3>Thank you for visiting my portfolio!</h3>
+        <p>
+          I'm interested in General IT opportunities, learning new
+          technologies and collaborating on meaningful projects.
+        </p>
+
+        <div class="contact-links">
+          <a class="btn btn-primary" href="mailto:areejalimustafa1@gmail.com">Email Me</a>
+          <a class="btn btn-outline" href="https://github.com/areej0345" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn btn-outline" href="https://linkedin.com/in/areej-ali-558b39295" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2026 Areej Ali Mustafa. All Rights Reserved.</p>
+  <p>Designed and developed with care.</p>
+</footer>
+
+<script>
+  const menuBtn = document.getElementById("menuBtn");
+  const navLinks = document.getElementById("navLinks");
+
+  menuBtn.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
+
+  document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("active");
     });
-
-    document.querySelectorAll(".nav-links a").forEach(link => {
-      link.addEventListener("click", () => {
-        navLinks.classList.remove("active");
-      });
-    });
-  </script>
+  });
+</script>
 
 </body>
 </html>
